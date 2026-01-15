@@ -69,6 +69,11 @@ body {
     color: var(--color-text-primary);
 }
 
+.nav-logo-img {
+    height: 32px;
+    width: auto;
+}
+
 .nav-logo svg {
     color: var(--color-accent);
 }
@@ -186,8 +191,9 @@ body {
 }
 
 .price-label {
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: var(--color-text-secondary);
+    font-weight: 400;
 }
 
 .btn-primary {
@@ -226,6 +232,13 @@ body {
     gap: var(--spacing-md);
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--color-border);
+}
+
+.hero-note {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
 }
 
 .social-proof-avatars {
@@ -879,6 +892,13 @@ body {
     font-weight: 700;
 }
 
+.pricing-label {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
 .btn-primary-large {
     display: inline-flex;
     align-items: center;
@@ -946,6 +966,11 @@ body {
     gap: 0.75rem;
     font-weight: 600;
     font-size: 1.125rem;
+}
+
+.footer-logo-img {
+    height: 28px;
+    width: auto;
 }
 
 .footer-logo svg {
