@@ -54,7 +54,7 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-logo-img {
-    height: 48px;
+    height: 80px;
     width: auto;
 }
 
@@ -91,7 +91,7 @@ body {
 
 /* Promo Banner */
 .promo-banner {
-    margin-top: 4rem;
+    margin-top: 5rem;
     padding: 0.875rem 2rem;
     background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
     border-bottom: 1px solid rgba(59, 130, 246, 0.2);
