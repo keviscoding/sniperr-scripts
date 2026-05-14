@@ -132,6 +132,22 @@ section {
 .feature-stats li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
 .stat-num { font-weight: 700; color: var(--accent); margin-right: 8px; }
 
+/* FEATURE HIGHLIGHT BOX */
+.feature-highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.highlight-stat { font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+.highlight-label { font-size: 0.9rem; color: var(--text-dim); }
+
 /* STATS BAR */
 .stats-bar {
     display: grid;
