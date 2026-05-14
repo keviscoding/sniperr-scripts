@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniperr Apex — Setup Guides</title>
+    <link rel="stylesheet" href="tutorials.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div class="password-gate" id="passwordGate">
+    <div class="gate-logo">Sniperr</div>
+    <p class="gate-sub">sniperr.store</p>
+    <div class="gate-box">
+        <h2>Members Only</h2>
+        <p>Enter your access code to view the setup guides.</p>
+        <input type="password" id="passwordInput" placeholder="Access code" autocomplete="off">
+        <button class="gate-btn" id="submitBtn">Unlock Tutorials</button>
+        <p class="gate-error" id="gateError">Incorrect code. Check your Whop purchase for the password.</p>
+    </div>
+</div>
+
+<!-- TUTORIAL CONTENT (hidden until authenticated) -->
+<div class="tutorial-content" id="tutorialContent">
+
+    <!-- HEADER -->
+    <header class="tut-header">
+        <div class="logo">Sniperr <span>Apex</span></div>
+        <div class="header-links">
+            <a href="apex.html">Store</a>
+            <a href="https://sniperr.store" target="_blank">sniperr.store</a>
+        </div>
+    </header>
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h1>Setup Guides</h1>
+        <p>Follow these step-by-step tutorials to get Sniperr running on your Cronus Zen. Each section covers a specific feature — work through them in order for best results.</p>
+    </div>
+
+    <!-- TUTORIAL SECTIONS -->
+    <div class="tutorials-wrap">
+
+        <!-- 0. LOADING THE SCRIPT -->
+        <div class="tut-section open">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">0</span> Loading the Script</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>Before anything else, you need to flash the Sniperr .gpc file onto your Cronus Zen. This only takes a couple of minutes.</p>
+                <ol>
+                    <li>Open <strong>Zen Studio</strong> on your PC</li>
+                    <li>Go to <strong>Slot 1</strong> — make sure it's empty (right-click → Clear if needed)</li>
+                    <li>Drag and drop the <strong>Sniperr .gpc file</strong> into Slot 1</li>
+                    <li>Click <strong>Program</strong> at the bottom to flash it to your Zen</li>
+                    <li>Wait for the confirmation — you're good to go</li>
+                </ol>
+                <div class="callout">
+                    <strong>Tip:</strong> Always clear any old scripts from the slot before loading Sniperr. This avoids conflicts and ensures clean operation.
+                </div>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_1">
+                    <!-- VIDALYTICS EMBED: Loading the Script -->
+                    <!-- Paste your Vidalytics embed code here for: 00_load_script_S29.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Loading the Script</div>
+                        <div class="video-file">00_load_script_S29.mp4</div>
+                    </div>
+                </div>
+
+                <h4 style="margin: 24px 0 12px; font-size: 0.95rem;">Connecting Your Controller + Zen</h4>
+                <p>How you plug in depends on your platform:</p>
+                <ul>
+                    <li><strong>Xbox:</strong> Connect your Xbox controller to the Zen's top USB port. Connect the Zen to your console with the bottom USB port. That's it — Xbox auto-pairs.</li>
+                    <li><strong>PS5:</strong> Use a standard PS5 controller (not Edge). Connect controller → Zen top port, Zen → console bottom port via USB. See the PS5 Bypass section below for the required extra step.</li>
+                    <li><strong>PS4:</strong> Same as PS5 but no bypass needed. Controller top port, Zen to console bottom port.</li>
+                    <li><strong>PC:</strong> Connect Zen to PC via USB. Connect controller to Zen's top port. Set output protocol to PS5 in Zen Studio for auto-detect to work.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 1. PS5 BYPASS -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">1</span> PS5 Bypass</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>If you're on PS5, there's an essential bypass step you must do every time you boot up. Without this, the Zen won't authenticate properly.</p>
+                <ol>
+                    <li>Make sure your <strong>PS5 firmware is fully updated</strong> (latest version)</li>
+                    <li>Use a <strong>standard DualSense controller</strong> (not the Edge model)</li>
+                    <li>On your PS5, go to <strong>Settings → Accessories → Controllers</strong></li>
+                    <li>Set <strong>Communication Method</strong> to USB Cable</li>
+                    <li>Plug your controller into the Zen, then Zen into the console</li>
+                    <li><strong>Hold the Right D-Pad for 10 seconds</strong> — wait for the LED to confirm</li>
+                </ol>
+
+                <div class="callout">
+                    <strong>PS5 Settings Required:</strong> Vibration Intensity → STRONG | Trigger Effect → STRONG | Communication Method → USB Cable
+                </div>
+
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/embed/CjcduLkLadc" title="PS5 Bypass Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BUTTON SETUP -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">2</span> Button Setup</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>Sniperr supports both default and custom button layouts. This video walks you through configuring your preferred layout on Xbox or PS5 so everything maps correctly with the script.</p>
+                <p>If you're using a custom controller layout in Apex, you'll need to match those bindings in the script's button config to ensure mods trigger on the right inputs.</p>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_2">
+                    <!-- VIDALYTICS EMBED: Button Setup -->
+                    <!-- Paste your Vidalytics embed code here for: 01_buttons.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Button Setup</div>
+                        <div class="video-file">01_buttons.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. RAPID FIRE & AIM ASSIST -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">3</span> Rapid Fire &amp; Aim Assist</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>This section covers how to navigate the in-game mod menu for rapid fire and aim assist settings. Learn how to activate, adjust values, and find the sweet spot for your playstyle.</p>
+
+                <div class="callout warning">
+                    <strong>Important:</strong> The Cronus Zen cannot increase aim assist beyond what the game already provides. What it does is keep the game's built-in aim assist engaged at all times, so you never accidentally lose it during fights.
+                </div>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_3">
+                    <!-- VIDALYTICS EMBED: Rapid Fire & Aim Assist -->
+                    <!-- Paste your Vidalytics embed code here for: 03_rapid_fire_aim_assist.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Rapid Fire & Aim Assist</div>
+                        <div class="video-file">03_rapid_fire_aim_assist.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. PRESS DOWN / L3 / LEFT MODS -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">4</span> Press Down / L3 / Left Mods</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>These mods are activated using the down/L3/left inputs and include some of the most powerful utility features in the script:</p>
+                <ul>
+                    <li><strong>Spam Exec:</strong> Rapidly executes finishers for faster knockdown confirms</li>
+                    <li><strong>Mantle Jump:</strong> Automated mantle-cancel jumps for faster vertical movement</li>
+                    <li><strong>Zip Jump:</strong> Perfect zipline jumps every time — no timing needed</li>
+                    <li><strong>Fast Perk:</strong> Speeds up perk selection in-game</li>
+                    <li><strong>Armor Swap:</strong> Lightning-fast armor swaps from deathboxes</li>
+                </ul>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_4">
+                    <!-- VIDALYTICS EMBED: Press Down / L3 / Left Mods -->
+                    <!-- Paste your Vidalytics embed code here for: 04_press_down_l3_left.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Press Down / L3 / Left Mods</div>
+                        <div class="video-file">04_press_down_l3_left.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. SHOT MODS -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">5</span> Shot Mods</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>Shot mods enhance your gunplay with automated movement and timing tricks while shooting:</p>
+                <ul>
+                    <li><strong>Fire Limit:</strong> Controls fire rate cap for semi-auto weapons</li>
+                    <li><strong>Auto Aim:</strong> Keeps your aim sticky while firing (uses built-in aim assist mechanics)</li>
+                    <li><strong>Crouch Shot:</strong> Automatically crouches mid-fight making you harder to hit</li>
+                    <li><strong>Strafe Shot:</strong> Adds micro-strafes while you shoot for better evasion</li>
+                    <li><strong>Fast Reload:</strong> Optimizes reload cancel timing</li>
+                </ul>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_5">
+                    <!-- VIDALYTICS EMBED: Shot Mods -->
+                    <!-- Paste your Vidalytics embed code here for: 06_shot_mods.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Shot Mods</div>
+                        <div class="video-file">06_shot_mods.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. LEGEND SETTINGS -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">6</span> Legend Settings</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>Certain legends have unique abilities that benefit from specific script configurations. This section covers optimized settings for:</p>
+                <ul>
+                    <li><strong>Ash:</strong> Tether and phase breach timing optimization</li>
+                    <li><strong>Ballistic:</strong> Weapon sling and tempest configurations</li>
+                    <li><strong>Pathfinder:</strong> Grapple-jump macro timing</li>
+                </ul>
+                <p>If you main one of these legends, make sure to enable their specific config in the mod menu.</p>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_6">
+                    <!-- VIDALYTICS EMBED: Legend Settings -->
+                    <!-- Paste your Vidalytics embed code here for: 07_legends.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Legend Settings</div>
+                        <div class="video-file">07_legends.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 2-TOUCH MOD -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">7</span> 2-Touch Mod</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>The 2-Touch system lets you quickly select weapons, barrel stabilizers, and optics using two-button combos. Instead of scrolling through menus, press two buttons simultaneously to instantly swap configurations.</p>
+                <p><strong>Recommended bindings:</strong></p>
+                <ul>
+                    <li><strong>Assault Rifle profile:</strong> Reload + Up Arrow</li>
+                    <li><strong>SMG profile:</strong> Reload + Down Arrow</li>
+                    <li><strong>Optics swap:</strong> Reload + Right Arrow</li>
+                    <li><strong>Barrel swap:</strong> Reload + Left Arrow</li>
+                    <li><strong>Reset to default:</strong> Reload + Touchpad</li>
+                </ul>
+
+                <div class="callout">
+                    <strong>Tip:</strong> Practice these combos in the firing range until they become muscle memory. Once you've got them down, weapon switching mid-fight becomes effortless.
+                </div>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_7">
+                    <!-- VIDALYTICS EMBED: 2-Touch Mod -->
+                    <!-- Paste your Vidalytics embed code here for: 08_2touch_mod.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">2-Touch Mod</div>
+                        <div class="video-file">08_2touch_mod.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. SENSITIVITY / ANTI-RECOIL -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">8</span> Sensitivity &amp; Anti-Recoil</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>The core of what makes Sniperr so effective — properly dialed sensitivity and anti-recoil settings. There are two modes available:</p>
+                <ul>
+                    <li><strong>Normal Sensitivity:</strong> Uses Apex's standard sensitivity sliders. Simpler to configure and works great for most players.</li>
+                    <li><strong>Advanced Sensitivity:</strong> Uses per-optic ADS multipliers and response curve tweaks. More granular but harder to dial in.</li>
+                </ul>
+
+                <div class="callout">
+                    <strong>Recommendation:</strong> We highly recommend using <strong>Normal sensitivity</strong> unless you have a specific reason for advanced. Normal provides the most consistent anti-recoil performance across all weapons.
+                </div>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_8">
+                    <!-- VIDALYTICS EMBED: Sensitivity & Anti-Recoil -->
+                    <!-- Paste your Vidalytics embed code here for: 09_sensitivity_antirecoil.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Sensitivity & Anti-Recoil</div>
+                        <div class="video-file">09_sensitivity_antirecoil.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. SETTINGS MOD -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">9</span> Settings Mod</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>The Settings Mod gives you fine-grained control over how the script behaves. Here's what each option does:</p>
+                <ul>
+                    <li><strong>Stick Drift Fix:</strong> Compensates for stick drift on worn controllers</li>
+                    <li><strong>Edit Vert/Horiz/Hyp:</strong> Adjust vertical, horizontal, and hyper-sensitivity curves</li>
+                    <li><strong>Auto Resync:</strong> Keeps the Zen synced with your controller after timeout or disconnect</li>
+                    <li><strong>Target:</strong> Fine-tune aim target tracking behavior</li>
+                    <li><strong>Reset Keys:</strong> Reassign reset button combinations</li>
+                    <li><strong>Pad/Game Rumble:</strong> Toggle controller vibration from the script level</li>
+                    <li><strong>Humanize:</strong> Adds slight randomness to inputs so patterns look natural</li>
+                </ul>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_9">
+                    <!-- VIDALYTICS EMBED: Settings Mod -->
+                    <!-- Paste your Vidalytics embed code here for: 10_settings_mod.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Settings Mod</div>
+                        <div class="video-file">10_settings_mod.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. AUTO DETECT -->
+        <div class="tut-section">
+            <div class="tut-section-header" onclick="toggleSection(this)">
+                <h3><span class="section-num">10</span> Auto Detect (PS5 &amp; PC Only)</h3>
+                <span class="chevron">▼</span>
+            </div>
+            <div class="tut-section-body">
+                <p>Auto Detect uses your controller's adaptive triggers and vibration feedback to automatically identify which weapon you're holding — no manual switching required.</p>
+
+                <div class="callout warning">
+                    <strong>Xbox users:</strong> Auto Detect does not work on Xbox because Xbox controllers lack adaptive trigger hardware. Xbox users should use the 2-Touch system instead.
+                </div>
+
+                <p><strong>In-game settings required:</strong></p>
+                <ul>
+                    <li>Deadzone for L2/R2 → <strong>None</strong></li>
+                    <li>Adaptive Triggers → <strong>On</strong></li>
+                    <li>Vibration → <strong>Default</strong></li>
+                </ul>
+
+                <p><strong>Zen-side settings:</strong></p>
+                <ul>
+                    <li>Game Rumble → <strong>On</strong></li>
+                    <li>Auto Resync → <strong>PS5</strong></li>
+                    <li>Auto Detect → <strong>Always On</strong></li>
+                </ul>
+
+                <p><strong>PC-specific notes:</strong></p>
+                <ul>
+                    <li>In Zen Studio, set Output Protocol to <strong>PS5</strong></li>
+                    <li><strong>Close Zen Studio</strong> completely after programming (it can interfere)</li>
+                    <li>Turn off <strong>Steam Input</strong> for Apex in Steam settings</li>
+                </ul>
+
+                <div class="video-embed" id="VIDALYTICS_SLOT_10">
+                    <!-- VIDALYTICS EMBED: Auto Detect -->
+                    <!-- Paste your Vidalytics embed code here for: 11_auto_detect.mp4 -->
+                    <!-- It will look like: <script src="https://fast.vidalytics.com/embeds/..."></script> -->
+                    <div class="video-placeholder">
+                        <div class="video-icon">▶</div>
+                        <div class="video-label">Auto Detect</div>
+                        <div class="video-file">11_auto_detect.mp4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- QUICK COMMANDS -->
+    <div class="commands-section">
+        <h2>Quick Commands</h2>
+        <div class="commands-grid">
+            <div class="command-row">
+                <span class="command-keys">AIM + PS/XBOX Button</span>
+                <span class="command-desc">Open the Mods Menu</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">AIM + SHARE/VIEW</span>
+                <span class="command-desc">Turn off the script entirely</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">RIGHT / LEFT (in menu)</span>
+                <span class="command-desc">Navigate between mods</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">UP / DOWN (in menu)</span>
+                <span class="command-desc">Activate or deactivate a mod</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">X / A (in menu)</span>
+                <span class="command-desc">Enter a mod's sub-menu</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">AIM + ARROWS (in menu)</span>
+                <span class="command-desc">Change mod values</span>
+            </div>
+            <div class="command-row">
+                <span class="command-keys">SQUARE / X (in menu)</span>
+                <span class="command-desc">Change values inside certain mods</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2>Troubleshooting</h2>
+
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                Anti-recoil doesn't seem to be working
+                <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-a">
+                <p>If your anti-recoil feels off or isn't engaging, check these common fixes:</p>
+                <ul>
+                    <li>Make sure <strong>Crouch Shot mod is off</strong> — it can interfere with recoil control when set wrong</li>
+                    <li>Verify your controller is plugged directly into the Zen (not wirelessly paired to the console)</li>
+                    <li>Set in-game <strong>Vibration to Default</strong> — the script uses rumble feedback for detection</li>
+                    <li>Make sure you've entered your actual in-game sensitivity values in the <strong>Sensitivity Mod</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                I'm on Xbox — do I need to do anything special?
+                <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-a">
+                <p>Nope. Xbox is the simplest platform to set up. The Cronus Zen automatically recognizes Xbox controllers — no bypass or extra configuration needed. Just load the script, plug in, and play. The only limitation is that Auto Detect won't work (use 2-Touch instead).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="tut-footer">
+        <p>Need help? Join the <a href="https://sniperr.store" target="_blank">Sniperr community on Whop</a> for live support.</p>
+        <p style="margin-top: 8px;">© 2026 Sniperr — <a href="apex.html">sniperr.store</a></p>
+    </footer>
+
+</div>
+
+<script>
+(function() {
+    const HASH = '35a72856ee8709f53da0441f6d898a8ae7d6c45c1ebc9fc06b788c635547af6c';
+
+    async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    const gate = document.getElementById('passwordGate');
+    const content = document.getElementById('tutorialContent');
+    const input = document.getElementById('passwordInput');
+    const btn = document.getElementById('submitBtn');
+    const error = document.getElementById('gateError');
+
+    if (sessionStorage.getItem('sniperr_auth') === 'true') {
+        gate.style.display = 'none';
+        content.classList.add('visible');
+    }
+
+    async function attempt() {
+        const val = input.value.trim();
+        if (!val) return;
+
+        const hash = await sha256(val);
+        if (hash === HASH) {
+            sessionStorage.setItem('sniperr_auth', 'true');
+            gate.style.display = 'none';
+            content.classList.add('visible');
+        } else {
+            input.classList.add('error');
+            error.classList.add('show');
+            setTimeout(() => {
+                input.classList.remove('error');
+            }, 300);
+        }
+    }
+
+    btn.addEventListener('click', attempt);
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') attempt();
+    });
+    input.addEventListener('input', function() {
+        error.classList.remove('show');
+    });
+})();
+
+function toggleSection(header) {
+    const section = header.parentElement;
+    section.classList.toggle('open');
+}
+
+function toggleFaq(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
