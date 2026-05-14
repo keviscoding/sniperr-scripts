@@ -283,37 +283,31 @@ a:hover { text-decoration: underline; }
     color: var(--text);
 }
 
-/* VIDEO EMBED CONTAINERS (Vidalytics) */
-.video-embed {
-    margin: 16px 0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.video-placeholder {
+/* VIDEO PLACEHOLDERS */
+.video-box {
     background: var(--bg);
     border: 2px dashed var(--border);
     border-radius: 10px;
     padding: 40px 24px;
     text-align: center;
+    margin: 16px 0;
 }
 
-.video-placeholder .video-icon {
+.video-box .video-icon {
     font-size: 2rem;
     margin-bottom: 8px;
 }
 
-.video-placeholder .video-label {
-    font-size: 0.9rem;
-    color: var(--text);
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.video-placeholder .video-file {
-    font-size: 0.75rem;
+.video-box .video-name {
+    font-size: 0.85rem;
     color: var(--text-dim);
     font-family: monospace;
+}
+
+.video-box .video-note {
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-top: 8px;
 }
 
 /* YOUTUBE EMBED */

@@ -76,7 +76,7 @@ section {
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
 .social-proof { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 20px; font-size: 0.85rem; color: var(--text-dim); }
 .avatars { display: flex; }
-.avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); border: 2px solid var(--bg); margin-left: -8px; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); border: 2px solid var(--bg); margin-left: -8px; object-fit: cover; }
 .avatar:first-child { margin-left: 0; }
 .cancel-note { font-size: 0.8rem; color: var(--text-dim); margin-top: 12px; }
 
@@ -86,7 +86,16 @@ section {
 .section-sub { color: var(--text-dim); margin-bottom: 32px; }
 .section-label { font-size: 0.75rem; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; text-transform: uppercase; }
 
-/* VIDEO PLACEHOLDER */
+/* VIDEO EMBED */
+.video-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+/* VIDEO PLACEHOLDER (fallback) */
 .video-placeholder {
     background: var(--surface);
     border: 2px dashed var(--border);
@@ -171,9 +180,11 @@ section {
     padding: 24px;
 }
 .review-text { margin: 12px 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.5; }
-.reviewer { display: flex; justify-content: space-between; align-items: center; }
+.reviewer { display: flex; align-items: center; gap: 12px; }
+.reviewer-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.reviewer-info { display: flex; flex-direction: column; }
 .reviewer-name { font-weight: 600; font-size: 0.85rem; }
-.reviewer-rank { font-size: 0.75rem; color: var(--accent); background: rgba(124, 92, 252, 0.1); padding: 4px 10px; border-radius: 20px; }
+.reviewer-rank { font-size: 0.75rem; color: var(--accent); }
 
 /* PLATFORMS */
 .platforms-section { text-align: center; }
