@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniperr Generator — NBA 2K26 Script Builder</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="generator.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="brand-label">SNIPERR.STORE</span>
+            <h1>Sniperr Generator</h1>
+            <p class="subtitle">Fast build-specific downloads for NBA 2K26.</p>
+        </div>
+        <div class="header-right">
+            <span class="status-badge">SNIPERR ACTIVE</span>
+        </div>
+    </header>
+    <main>
+        <section class="settings-panel">
+            <div class="panel-header">
+                <h2>Build Settings</h2>
+                <div class="timing-display">TIMING <span id="timing-value">850</span></div>
+            </div>
+            <div class="setting-row full-width">
+                <div class="setting-card slider-card">
+                    <div class="setting-label-row">
+                        <span class="setting-name">Build Height</span>
+                        <span class="setting-value" id="height-display">6'8</span>
+                    </div>
+                    <input type="range" id="build-height" min="0" max="12" value="8" class="slider">
+                    <div class="slider-labels"><span>5'7</span><span>7'4</span></div>
+                </div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card">
+                    <div class="setting-label-row">
+                        <span class="setting-name">Auto-Green Timing</span>
+                        <span class="setting-value" id="agtime-display">850</span>
+                    </div>
+                    <input type="range" id="ag-timing" min="600" max="1000" value="850" step="10" class="slider">
+                    <div class="slider-labels"><span>600ms</span><span>1000ms</span></div>
+                </div>
+                <div class="setting-card">
+                    <div class="setting-label-row">
+                        <span class="setting-name">Turbo Shots</span>
+                        <span class="setting-value" id="turbo-display">Turbo Fade</span>
+                    </div>
+                    <select id="turbo-mode" class="dropdown">
+                        <option value="1">Turbo Fade</option>
+                        <option value="0">OFF</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card toggle-card"><span class="setting-name">AI Button Tempo</span><label class="toggle"><input type="checkbox" id="btn-tempo" checked><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+                <div class="setting-card toggle-card"><span class="setting-name">Auto-Green</span><label class="toggle"><input type="checkbox" id="auto-green" checked><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card toggle-card"><span class="setting-name">RS Shooting</span><label class="toggle"><input type="checkbox" id="rs-shooting"><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+                <div class="setting-card"><div class="setting-label-row"><span class="setting-name">Quick-Stop</span></div><select id="quick-stop" class="dropdown"><option value="1">Auto</option><option value="0">OFF</option><option value="2">L2 / LT</option></select></div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card"><div class="setting-label-row"><span class="setting-name">Meter Dunk</span></div><select id="meter-dunk" class="dropdown"><option value="0">OFF</option><option value="1">L1 / LB</option><option value="2">Circle / B</option></select></div>
+                <div class="setting-card toggle-card"><span class="setting-name">Infinite Stamina</span><label class="toggle"><input type="checkbox" id="inf-stamina" checked><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card toggle-card"><span class="setting-name">Dribbles</span><label class="toggle"><input type="checkbox" id="dribbles" checked><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+                <div class="setting-card"><div class="setting-label-row"><span class="setting-name">SQ/X Remap</span></div><select id="sq-remap" class="dropdown"><option value="0">Left-Stick</option><option value="1">R3</option><option value="2">L1 / LB</option><option value="3">R1 / RB</option></select></div>
+            </div>
+            <div class="setting-row two-col">
+                <div class="setting-card toggle-card"><span class="setting-name">AI Defense</span><label class="toggle"><input type="checkbox" id="ai-defense" checked><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+                <div class="setting-card toggle-card"><span class="setting-name">Spot-Take</span><label class="toggle"><input type="checkbox" id="spot-take"><span class="toggle-slider"></span><span class="toggle-label on">ON</span><span class="toggle-label off">OFF</span></label></div>
+            </div>
+        </section>
+        <section class="pro-section">
+            <div class="pro-header">INCLUDED IN SNIPERR PRO</div>
+            <p class="pro-desc">Unlock higher-end timing profiles, smarter fade tuning, and premium shot optimization in the generated GPC.</p>
+            <div class="pro-tags"><span class="pro-tag">Auto-Green Tempo</span><span class="pro-tag">Auto-Green Fades</span><span class="pro-tag">Auto-Green No-Dip</span><span class="pro-tag">Release Boost Profiles</span><span class="pro-tag">Build-Specific Fade Tuning</span><span class="pro-tag">Priority Shot Windows</span><span class="pro-tag">Rhythm Shot Assist</span><span class="pro-tag">Smart No-Dip Windows</span></div>
+        </section>
+        <div class="action-row">
+            <button class="btn-download" id="download-btn">Download Script</button>
+            <button class="btn-reset" id="reset-btn">Reset To Defaults</button>
+        </div>
+        <section class="install-section">
+            <h2>HOW TO INSTALL</h2>
+            <div class="install-grid">
+                <div class="install-card"><div class="install-icon">&#8615;</div><h3>Download</h3><p>Click download above to save the .gpc script to your device.</p></div>
+                <div class="install-card"><div class="install-icon">&#9633;</div><h3>Open Zen Studio</h3><p>Launch Cronus Zen Studio on your PC and connect your device via USB.</p></div>
+                <div class="install-card"><div class="install-icon">&#9889;</div><h3>Load & Flash</h3><p>Open the .gpc file in Zen Studio, then click Program Device to flash.</p></div>
+            </div>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 Sniperr &mdash; sniperr.store</p></footer>
+    <script src="generator.js"></script>
+</body>
+</html>
