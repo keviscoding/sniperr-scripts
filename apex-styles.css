@@ -51,7 +51,7 @@ section {
 }
 
 /* HERO */
-.hero { text-align: center; padding-top: 100px; }
+.hero { text-align: center; padding-top: 40px; }
 .hero-label { font-size: 0.75rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 24px; text-transform: uppercase; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
 .stars { font-size: 1.3rem; color: #facc15; margin-bottom: 4px; }
