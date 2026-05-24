@@ -45,10 +45,21 @@
 
     <div id="form-section">
         <div class="info-box">
-            <strong>How it works:</strong> Fill out the form below with your exact settings. Within 24 hours, your custom-compiled script file will be sent directly to you on Discord. No setup, no errors — guaranteed to work first try.
+            <strong>How it works:</strong> Fill out the form below with your exact settings. Within 24 hours, your custom-compiled script file will be sent to you in the support chat here on Whop. No setup, no errors — guaranteed to work first try.
         </div>
 
         <div class="form-card">
+            <div class="form-group">
+                <label>Which game is this for?</label>
+                <select id="game">
+                    <option value="">Select game...</option>
+                    <option>Apex Legends</option>
+                    <option>NBA 2K26</option>
+                    <option>Call of Duty: Black Ops 7</option>
+                    <option>Other (specify below)</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label>What platform are you on?</label>
                 <select id="platform">
@@ -76,9 +87,9 @@
             </div>
 
             <div class="form-group">
-                <label>Your in-game sensitivity settings</label>
-                <textarea id="sensitivity" placeholder="E.g. Look sensitivity: 7, ADS sensitivity: 5, Deadzone: 5%, Response curve: Classic"></textarea>
-                <div class="hint">Include any relevant sensitivity, deadzone, and response curve settings from your game.</div>
+                <label>Your in-game settings</label>
+                <textarea id="sensitivity" placeholder="E.g. Sensitivity: 7, ADS: 5, Deadzone: 5%, Build height: 6'8, Jumpshot base: 98..."></textarea>
+                <div class="hint">Include any relevant in-game settings — sensitivity, deadzones, build info, or anything specific to your setup.</div>
             </div>
 
             <div class="form-group">
@@ -93,9 +104,8 @@
             </div>
 
             <div class="form-group">
-                <label>Your Discord username</label>
-                <input type="text" id="discord" placeholder="E.g. username#1234 or @username">
-                <div class="hint">We'll DM your custom file here within 24 hours.</div>
+                <label>Anything else we should know?</label>
+                <input type="text" id="notes" placeholder="Optional — any other details about your setup">
             </div>
 
             <button class="btn-submit" id="submit-btn" onclick="submitForm()">Submit Custom Build Request</button>
@@ -104,21 +114,22 @@
 
     <div class="success" id="success-section">
         <h2>Request Submitted!</h2>
-        <p>Your custom build is being compiled. You'll receive your personalized script file via Discord DM within 24 hours.<br><br>No setup required on your end — just drag, drop, and play.<br><br>If you have any questions, reach out in the support chat.</p>
+        <p>Your custom build is being compiled. You'll receive your personalized script file in the support chat here on Whop within 24 hours.<br><br>No setup required on your end — just drag, drop, and play.<br><br>If you have any questions, message us in the support chat.</p>
     </div>
 </div>
 
 <script>
 function submitForm() {
+    const game = document.getElementById('game').value;
     const platform = document.getElementById('platform').value;
     const controller = document.getElementById('controller').value;
     const sensitivity = document.getElementById('sensitivity').value;
     const layout = document.getElementById('layout').value;
     const features = document.getElementById('features').value;
-    const discord = document.getElementById('discord').value;
+    const notes = document.getElementById('notes').value;
 
-    if (!platform || !controller || !discord) {
-        alert('Please fill in at least your platform, controller, and Discord username.');
+    if (!game || !platform || !controller) {
+        alert('Please fill in at least your game, platform, and controller.');
         return;
     }
 
