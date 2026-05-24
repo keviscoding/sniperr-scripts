@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniperr VIP Custom Build</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #0a0a12; --surface: #12121e; --surface2: #1a1a2e; --border: #2a2a42; --text: #f0f0f8; --dim: #8888a8; --accent: #7c5cfc; --accent-glow: rgba(124,92,252,0.25); --green: #22c55e; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 40px 24px; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 32px; }
+    .brand { font-size: 0.7rem; letter-spacing: 2px; color: var(--accent); font-weight: 600; }
+    h1 { font-size: 1.6rem; font-weight: 800; margin: 8px 0; }
+    .subtitle { color: var(--dim); font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin: 0 auto; }
+    .badge { background: var(--accent); color: white; font-size: 0.65rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; letter-spacing: 0.5px; display: inline-block; margin-bottom: 12px; }
+    .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-bottom: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; color: var(--dim); }
+    .form-group select, .form-group input, .form-group textarea { width: 100%; padding: 12px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.9rem; font-family: inherit; }
+    .form-group select:focus, .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-group .hint { font-size: 0.72rem; color: var(--dim); margin-top: 4px; }
+    .btn-submit { width: 100%; padding: 16px; background: var(--accent); color: white; font-size: 1rem; font-weight: 700; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 20px var(--accent-glow); transition: all 0.2s; }
+    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 30px var(--accent-glow); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .success { display: none; text-align: center; padding: 40px 20px; }
+    .success h2 { color: var(--green); margin-bottom: 12px; }
+    .success p { color: var(--dim); font-size: 0.9rem; line-height: 1.6; }
+    .info-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 0.82rem; color: var(--dim); line-height: 1.6; }
+    .info-box strong { color: var(--text); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="brand">SNIPERR.STORE</span>
+        <div class="badge">VIP PRIORITY</div>
+        <h1>VIP Custom Build</h1>
+        <p class="subtitle">Done for you. Submit your settings below and we'll build your custom script file. Just drag, drop, and play.</p>
+    </div>
+
+    <div id="form-section">
+        <div class="info-box">
+            <strong>How it works:</strong> Fill out the form below with your exact settings. Within 24 hours, your custom-compiled script file will be sent directly to you on Discord. No setup, no errors — guaranteed to work first try.
+        </div>
+
+        <div class="form-card">
+            <div class="form-group">
+                <label>What platform are you on?</label>
+                <select id="platform">
+                    <option value="">Select platform...</option>
+                    <option>PS5</option>
+                    <option>PS4</option>
+                    <option>Xbox Series X/S</option>
+                    <option>Xbox One</option>
+                    <option>PC</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>What controller are you using?</label>
+                <select id="controller">
+                    <option value="">Select controller...</option>
+                    <option>Standard DualSense (PS5)</option>
+                    <option>DualSense Edge</option>
+                    <option>Standard DualShock 4 (PS4)</option>
+                    <option>Xbox Wireless Controller</option>
+                    <option>Xbox Elite Series 2</option>
+                    <option>Scuf</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your in-game sensitivity settings</label>
+                <textarea id="sensitivity" placeholder="E.g. Look sensitivity: 7, ADS sensitivity: 5, Deadzone: 5%, Response curve: Classic"></textarea>
+                <div class="hint">Include any relevant sensitivity, deadzone, and response curve settings from your game.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Button layout</label>
+                <input type="text" id="layout" placeholder="E.g. Default, Bumper Jumper, Tactical, Custom...">
+            </div>
+
+            <div class="form-group">
+                <label>Any specific features you want enabled?</label>
+                <textarea id="features" placeholder="E.g. Anti-recoil, aim assist boost, rapid fire, auto-green, infinite stamina, drop shot..."></textarea>
+                <div class="hint">Tell us what you want the script to do. We'll configure everything for you.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Your Discord username</label>
+                <input type="text" id="discord" placeholder="E.g. username#1234 or @username">
+                <div class="hint">We'll DM your custom file here within 24 hours.</div>
+            </div>
+
+            <button class="btn-submit" id="submit-btn" onclick="submitForm()">Submit Custom Build Request</button>
+        </div>
+    </div>
+
+    <div class="success" id="success-section">
+        <h2>Request Submitted!</h2>
+        <p>Your custom build is being compiled. You'll receive your personalized script file via Discord DM within 24 hours.<br><br>No setup required on your end — just drag, drop, and play.<br><br>If you have any questions, reach out in the support chat.</p>
+    </div>
+</div>
+
+<script>
+function submitForm() {
+    const platform = document.getElementById('platform').value;
+    const controller = document.getElementById('controller').value;
+    const sensitivity = document.getElementById('sensitivity').value;
+    const layout = document.getElementById('layout').value;
+    const features = document.getElementById('features').value;
+    const discord = document.getElementById('discord').value;
+
+    if (!platform || !controller || !discord) {
+        alert('Please fill in at least your platform, controller, and Discord username.');
+        return;
+    }
+
+    document.getElementById('form-section').style.display = 'none';
+    document.getElementById('success-section').style.display = 'block';
+}
+</script>
+</body>
+</html>
