@@ -333,6 +333,12 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
 .reveal.in { opacity: 1; transform: none; }
 
+/* ===== Clip reel (local player clips) ===== */
+.clip-reel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 32px; }
+.clip-tile { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-solid); background: #000; aspect-ratio: 16 / 9; box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+.clip-tile video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.clip-tile .clip-tag { position: absolute; left: 10px; bottom: 10px; font-size: 0.72rem; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: rgba(0,0,0,0.55); backdrop-filter: blur(6px); border: 1px solid var(--hairline); color: #fff; }
+
 /* ===== Mods grid (scannable, one line each) ===== */
 .mods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .mod-card { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border-solid); transition: transform .2s, border-color .2s; }
@@ -423,6 +429,7 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 
     /* Single column for dense grids */
     .reviews-grid, .teardown-grid, .clips-grid, .mods-grid, .platform-tabs { grid-template-columns: 1fr; }
+    .clip-reel { grid-template-columns: 1fr 1fr; gap: 10px; }
     .stats-bar, .weapon-grid, .timeline { grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 18px; padding-right: 18px; }
     .stat-item .stat-number { font-size: 2rem; }
 
