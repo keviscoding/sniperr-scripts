@@ -36,7 +36,7 @@
         <section class="section hero">
             <div class="hero-pill"><span class="live"></span> One script for Black Ops 7 &amp; Warzone · 0 bans in 3+ years</div>
             <h1>The <span class="grad">engineered</span> Black Ops 7<br>+ Warzone Cronus Zen script</h1>
-            <p class="hero-sub">AI adaptive anti-recoil across 50+ weapon profiles. Multi-layer aim assist that tracks and snaps. Rapid fire, slide cancel, drop shot. Auto-detects your game and gun — re-tuned within 24h of every patch.</p>
+            <p class="hero-sub">AI adaptive anti-recoil, multi-layer aim assist, and 50+ weapon profiles. One script for BO7 and Warzone.</p>
             <div class="rating-row"><span class="stars">★★★★★</span> 4.9 / 5 · 1,310 verified reviews</div>
             <div class="price-row">
                 <span class="old-price">$80</span>
@@ -163,72 +163,14 @@
             </div>
         </section>
 
-        <!-- FEATURES -->
+                <!-- MODS -->
         <section class="section reveal">
-            <div class="center">
-                <p class="eyebrow center">20+ COMBAT MODS</p>
-                <h2 class="h2">Recoil, aim, and movement — engineered together</h2>
-                <p class="sub">Three pillars, all running together, all updated every patch.</p>
+            <div class="center" style="margin-bottom:28px;">
+                <p class="eyebrow center">EVERYTHING IN ONE SCRIPT</p>
+                <h2 class="h2">12 mods. One script.</h2>
+                <p class="sub">Everything below runs together, updated every patch.</p>
             </div>
-            <div class="feature-tabs">
-                <button class="feature-tab active" data-tab="recoil">Anti-Recoil</button>
-                <button class="feature-tab" data-tab="aim">Aim Assist</button>
-                <button class="feature-tab" data-tab="movement">Movement</button>
-            </div>
-
-            <div class="feature-content active" id="tab-recoil">
-                <div class="feature-text">
-                    <h3>AI Adaptive Anti-Recoil</h3>
-                    <p>A 20-sample learning system that self-corrects within one magazine, with 50+ per-weapon profiles and auto weapon detection. Re-tuned within 24 hours of every patch.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">50+</span> weapon profiles in the database</li>
-                        <li><span class="stat-num">1 mag</span> AI self-correction window</li>
-                        <li><span class="stat-num">Auto</span> weapon + game detection</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">ANTI-RECOIL</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-content" id="tab-aim">
-                <div class="feature-text">
-                    <h3>Multi-Layer Aim Assist</h3>
-                    <p>Tracking, prediction, bullet magnetism and headshot snap, layered with the game's aim assist. Auto-track follows targets by velocity; distance-based friction keeps close and long range feeling natural.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">Auto</span> velocity-based target follow</li>
-                        <li><span class="stat-num">Snap</span> headshot lock for faster kills</li>
-                        <li><span class="stat-num">Per-shot</span> bullet magnetism correction</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">AIM ASSIST</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-content" id="tab-movement">
-                <div class="feature-text">
-                    <h3>Movement &amp; Combat Mods</h3>
-                    <p>Slide cancel, drop shot, bunny hop, rapid fire, hair triggers and quick scope — all with precise, humanized timing so you win the duels you used to lose.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">Auto</span> slide cancel + drop shot</li>
-                        <li><span class="stat-num">Rapid</span> fire / burst / auto fire</li>
-                        <li><span class="stat-num">Hair</span> triggers + quick scope</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">MOVEMENT</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
+            <div class="mods-grid" id="modsGrid"></div>
         </section>
 
         <!-- WEAPON GRID -->
@@ -424,6 +366,7 @@
     </footer>
 
     <script>
+        window.SNIPERR_MODS = [["AI Adaptive Anti-Recoil", "Self-corrects in one mag"], ["Multi-Layer Aim Assist", "Tracks & snaps"], ["Auto-Track", "Velocity target follow"], ["Bullet Magnetism", "Per-shot correction"], ["Headshot Snap", "Faster kills"], ["Rapid Fire", "Max legal RPM"], ["Slide Cancel", "Auto timing"], ["Drop Shot", "On fire input"], ["Bunny Hop", "Chained jumps"], ["Hair Triggers", "Zero trigger delay"], ["Quick Scope", "Frame-perfect ADS"], ["Auto Game+Weapon Detect", "BO7 & Warzone, 50+ guns"]];
         window.SNIPERR_GRID = [
             ['XM4', 64], ['AK-74', 58], ['GPR 91', 60], ['Goblin MK2', 55],
             ['Jackal PDW', 52], ['Kompakt 92', 49], ['LR 7.62', 63], ['SVD', 41],

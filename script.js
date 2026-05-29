@@ -76,6 +76,18 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
         </div>`).join('');
 })();
 
+// ---- Mods grid (per-page via window.SNIPERR_MODS = [[name, blurb], ...]) ----
+(function mods() {
+    const host = document.getElementById('modsGrid');
+    if (!host) return;
+    const items = window.SNIPERR_MODS || [];
+    host.innerHTML = items.map(([n, b]) => `
+        <div class="mod-card">
+            <div class="mod-check">+</div>
+            <div><div class="mod-name">${n}</div><div class="mod-blurb">${b}</div></div>
+        </div>`).join('');
+})();
+
 // ---- Interactive demo: recoil (default) or auto-green (data-mode="green") ----
 (function demo() {
     const canvas = document.getElementById('recoilCanvas');

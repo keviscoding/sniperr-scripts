@@ -36,7 +36,7 @@
         <section class="section hero">
             <div class="hero-pill"><span class="live"></span> Trusted by ranked hoopers · 88%+ green rate in Rec &amp; Pro-Am</div>
             <h1>The <span class="grad">auto-green</span> NBA 2K26<br>Cronus Zen script</h1>
-            <p class="hero-sub">AI times your release for you — catch &amp; shoot, off-dribble, fades, no-dips. Button tempo, auto dribbles, infinite stamina. Re-calibrated every patch by a team that's done this for years.</p>
+            <p class="hero-sub">AI times every release — catch & shoot, off-dribble, fades, no-dips. Greens online, not just MyCourt.</p>
             <div class="rating-row"><span class="stars">★★★★★</span> 4.9 / 5 · 1,180 verified reviews</div>
             <div class="price-row">
                 <span class="old-price">$80</span>
@@ -168,72 +168,14 @@
             </div>
         </section>
 
-        <!-- FEATURES -->
+                <!-- MODS -->
         <section class="section reveal">
-            <div class="center">
+            <div class="center" style="margin-bottom:28px;">
                 <p class="eyebrow center">EVERYTHING IN ONE SCRIPT</p>
-                <h2 class="h2">Shooting, tempo, and handles</h2>
-                <p class="sub">Three pillars, all running together, all updated every patch.</p>
+                <h2 class="h2">12 mods. One script.</h2>
+                <p class="sub">Everything below runs together, updated every patch.</p>
             </div>
-            <div class="feature-tabs">
-                <button class="feature-tab active" data-tab="green">Auto-Green</button>
-                <button class="feature-tab" data-tab="tempo">Tempo</button>
-                <button class="feature-tab" data-tab="handles">Handles &amp; Stamina</button>
-            </div>
-
-            <div class="feature-content active" id="tab-green">
-                <div class="feature-text">
-                    <h3>AI Auto-Green</h3>
-                    <p>Real-time timing for every shot in the game — catch &amp; shoot, off-dribble pull-ups, step-backs, fades and no-dips. The AI reads the situation and nails the release window.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">96%</span> green on catch &amp; shoot</li>
-                        <li><span class="stat-num">92%</span> green off the dribble</li>
-                        <li><span class="stat-num">Auto</span> online latency offset</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">AUTO-GREEN</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-content" id="tab-tempo">
-                <div class="feature-text">
-                    <h3>Button Tempo &amp; Tap-Shot</h3>
-                    <p>Lock in your jumper's rhythm with millisecond-accurate tempo, or tap-shoot — flick the right stick or tap a button and the script handles the release timing for you.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">ms</span> button tempo precision</li>
-                        <li><span class="stat-num">RS</span> flick-up green shooting</li>
-                        <li><span class="stat-num">Tap</span> shot mode with preset tempo</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">TEMPO</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-content" id="tab-handles">
-                <div class="feature-text">
-                    <h3>Handles, Stamina &amp; Finishing</h3>
-                    <p>Break ankles with one-button dribble combos, stop draining on turbo with infinite stamina, auto quick-stop into clean jumpers, and time meter dunks every drive.</p>
-                    <ul class="feature-stats">
-                        <li><span class="stat-num">1-btn</span> auto dribble combos</li>
-                        <li><span class="stat-num">∞</span> infinite stamina control</li>
-                        <li><span class="stat-num">Auto</span> quick-stop + meter dunk</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    <div class="vframe">
-                        <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">HANDLES</span></div>
-                        <div class="vid-static"><div class="vs-glyph">&#9658;</div><div class="vs-text">See this running live in the gameplay video above</div></div>
-                    </div>
-                </div>
-            </div>
+            <div class="mods-grid" id="modsGrid"></div>
         </section>
 
         <!-- SHOT-TYPE GREEN GRID -->
@@ -429,6 +371,7 @@
     </footer>
 
     <script>
+        window.SNIPERR_MODS = [["AI Auto-Green", "Times every release"], ["Off-Dribble Green", "Pull-ups & step-backs"], ["Fade Green", "Contested & fading"], ["No-Dip Green", "Clean no-dip timing"], ["Button Tempo", "ms-accurate rhythm"], ["Tap Shot", "Tap to green"], ["RS Flick Shooting", "Right-stick greens"], ["Online Latency Offset", "Greens in Rec & Pro-Am"], ["Auto Dribble Combos", "One-button ankles"], ["Infinite Stamina", "Never get drained"], ["Auto Quick-Stop", "Clean stops into jumpers"], ["Meter Dunk", "Timed every drive"]];
         window.SNIPERR_GRID = [
             ['Catch &amp; Shoot', 96, 'green'], ['Off-Dribble', 92, 'green'], ['Step-Back', 90, 'green'], ['Moving', 88, 'green'],
             ['Deep 3', 85, 'green'], ['Fade', 89, 'green'], ['No-Dip', 94, 'green'], ['Free Throw', 99, 'green']

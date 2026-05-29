@@ -333,6 +333,14 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
 .reveal.in { opacity: 1; transform: none; }
 
+/* ===== Mods grid (scannable, one line each) ===== */
+.mods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mod-card { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border-solid); transition: transform .2s, border-color .2s; }
+.mod-card:hover { transform: translateY(-2px); border-color: var(--violet); }
+.mod-check { flex-shrink: 0; width: 24px; height: 24px; border-radius: 7px; background: rgba(124,92,252,0.15); color: var(--violet-2); display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700; }
+.mod-name { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+.mod-blurb { font-size: 0.78rem; color: var(--text-dim); line-height: 1.4; }
+
 /* ===== Static media panel (slots without a dedicated video) ===== */
 .vframe .vid-static {
     aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -386,19 +394,56 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 @media (max-width: 900px) {
     .demo-wrap, .split, .security, .founder, .platform-content { grid-template-columns: 1fr; }
     .feature-content.active { grid-template-columns: 1fr; }
-    .teardown-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .teardown-grid, .reviews-grid, .mods-grid { grid-template-columns: 1fr 1fr; }
     .weapon-grid { grid-template-columns: repeat(3, 1fr); }
     .timeline { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ===== Mobile ===== */
 @media (max-width: 640px) {
-    .section { padding: 70px 20px; }
-    .nav-links { gap: 16px; }
+    .section { padding: 52px 18px; }
+    .section.hero { padding-top: 44px; padding-bottom: 36px; }
+    .bg-grain { display: none; }
+
+    .nav-links { gap: 10px; }
     .nav-links a:not(.nav-cta) { display: none; }
-    .reviews-grid, .teardown-grid, .clips-grid, .stats-bar, .weapon-grid, .timeline { grid-template-columns: 1fr 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 2.4rem; }
-    .final-checks { gap: 14px; }
+    nav { padding: 13px 18px; }
+    .announce { font-size: 0.62rem; padding: 8px 12px; }
+
+    .hero h1 { font-size: 2.1rem; }
+    .hero-sub { font-size: 1rem; }
+    .h2 { font-size: 1.7rem; }
+    .sub { font-size: 0.95rem; }
+    .eyebrow { font-size: 0.66rem; margin-bottom: 12px; }
+    .new-price { font-size: 2.1rem; }
+    .btn-lg { padding: 15px 30px; font-size: 0.95rem; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn { width: 100%; }
+    .trust-strip { gap: 12px 16px; font-size: 0.76rem; }
+
+    /* Single column for dense grids */
+    .reviews-grid, .teardown-grid, .clips-grid, .mods-grid, .platform-tabs { grid-template-columns: 1fr; }
+    .stats-bar, .weapon-grid, .timeline { grid-template-columns: 1fr 1fr; gap: 10px; padding-left: 18px; padding-right: 18px; }
+    .stat-item .stat-number { font-size: 2rem; }
+
+    /* Tighten cards + remove heavy paragraphs feel */
+    .teardown-card { padding: 18px; }
+    .teardown-card p { font-size: 0.86rem; }
+    .demo-stage { order: -1; }
+    .demo-readouts { gap: 9px; }
+    .readout { padding: 11px 14px; }
+    .studio { padding: 28px 18px !important; }
+    .security { padding: 28px 18px; }
+    .whatyouget-box { padding: 28px 20px; }
+    .comparison-table { font-size: 0.82rem; }
+    .comp-header, .comp-row { padding: 12px 12px; }
+    .final-cta { padding: 70px 18px; }
+    .final-checks { gap: 10px 18px; font-size: 0.78rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .feature-tabs { gap: 6px; }
+    .feature-tab { padding: 9px 16px; font-size: 0.82rem; }
 }
-@media (max-width: 420px) {
-    .weapon-grid, .clips-grid, .stats-bar { grid-template-columns: 1fr; }
+@media (max-width: 400px) {
+    .stats-bar, .weapon-grid { grid-template-columns: 1fr; }
+    .timeline { grid-template-columns: 1fr; }
 }
