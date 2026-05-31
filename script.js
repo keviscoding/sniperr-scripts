@@ -317,6 +317,31 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     })(window, document, "clarity", "script", id);
 })();
 
+// ---- Clip audio (click to unmute/mute) ----
+(function clipAudio() {
+    document.querySelectorAll('.clip-tile').forEach(tile => {
+        const vid = tile.querySelector('video');
+        if (!vid) return;
+        const btn = document.createElement('span');
+        btn.className = 'clip-audio';
+        btn.textContent = '\uD83D\uDD07';  // muted icon
+        btn.title = 'Tap to unmute';
+        tile.appendChild(btn);
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            vid.muted = !vid.muted;
+            btn.textContent = vid.muted ? '\uD83D\uDD07' : '\uD83D\uDD0A';
+            btn.classList.toggle('on', !vid.muted);
+            btn.title = vid.muted ? 'Tap to unmute' : 'Tap to mute';
+        });
+        tile.addEventListener('click', () => {
+            vid.muted = !vid.muted;
+            btn.textContent = vid.muted ? '\uD83D\uDD07' : '\uD83D\uDD0A';
+            btn.classList.toggle('on', !vid.muted);
+        });
+    });
+})();
+
 // ---- Checkout routing (via upgrade page) ----
 (function checkoutRoute() {
     const cfg = window.SNIPERR_CHECKOUT;

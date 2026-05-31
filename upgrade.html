@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sniperr — Upgrade Your Order</title>
+    <title>Sniperr — Confirm Your Order</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,101 +11,175 @@
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         :root {
-            --bg:#070710; --surface:#0f0f1a; --surface-2:#14141f; --border:#23233360;
+            --bg:#070710; --surface:#0e0e18; --surface-2:#141420; --border:#1e1e30;
             --text:#f4f4fa; --text-soft:#c3c3d4; --text-dim:#7c7c93; --text-faint:#55556a;
-            --violet:#7c5cfc; --violet-2:#9d7bff; --cyan:#3df0e0;
-            --glow:rgba(124,92,252,0.45); --green:#34d399;
+            --violet:#7c5cfc; --violet-2:#9d7bff; --cyan:#3df0e0; --green:#34d399;
+            --glow:rgba(124,92,252,0.35);
             --font-display:'Space Grotesk','Segoe UI',system-ui,sans-serif;
             --font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
             --font-mono:'JetBrains Mono','SF Mono',ui-monospace,monospace;
         }
-        html { scroll-behavior:smooth; }
         body { font-family:var(--font-body); background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased; }
-        .bg { position:fixed; inset:0; z-index:-1; pointer-events:none;
-            background: radial-gradient(800px 400px at 50% 30%, rgba(124,92,252,0.14), transparent 70%), var(--bg); }
 
-        .card {
-            width:100%; max-width:520px; text-align:center;
-            background: var(--surface); border:1px solid var(--border); border-radius:20px;
-            padding:48px 36px 40px; position:relative; overflow:hidden;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-        }
-        .card::before { content:""; position:absolute; inset:0; border-radius:20px; padding:1px; pointer-events:none;
-            background:linear-gradient(130deg, var(--violet), transparent 45%, var(--cyan));
-            -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; }
+        .page { width:100%; max-width:480px; }
 
-        .logo { font-family:var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:28px; display:flex; align-items:center; justify-content:center; gap:8px; }
+        /* Header */
+        .logo { font-family:var(--font-display); font-size:1.15rem; font-weight:700; display:flex; align-items:center; gap:8px; margin-bottom:32px; }
         .dot { width:8px; height:8px; border-radius:50%; background:var(--violet); box-shadow:0 0 12px var(--violet); }
-        .eyebrow { font-family:var(--font-mono); font-size:0.68rem; letter-spacing:2px; color:var(--violet-2); text-transform:uppercase; margin-bottom:16px; }
-        h1 { font-family:var(--font-display); font-size:1.65rem; font-weight:700; line-height:1.2; margin-bottom:14px; }
-        h1 .grad { background:linear-gradient(120deg,var(--violet-2),var(--cyan)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-        .desc { color:var(--text-dim); font-size:0.92rem; line-height:1.6; margin-bottom:24px; max-width:420px; margin-left:auto; margin-right:auto; }
 
-        .price-block { margin-bottom:28px; }
-        .price-row { display:flex; align-items:baseline; justify-content:center; gap:12px; margin-bottom:6px; }
-        .price-std { text-decoration:line-through; color:var(--text-faint); font-size:1rem; }
-        .price-vip { font-family:var(--font-display); font-size:2rem; font-weight:700; }
-        .price-label { color:var(--text-dim); font-size:0.85rem; }
-        .includes { font-family:var(--font-mono); font-size:0.74rem; color:var(--cyan); letter-spacing:0.5px; }
+        /* Order summary card */
+        .order-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+        .order-header { padding:20px 24px 16px; border-bottom:1px solid var(--border); }
+        .order-header h2 { font-family:var(--font-display); font-size:0.78rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-dim); }
 
-        .btn { display:block; width:100%; padding:17px; border-radius:12px; font-family:var(--font-body); font-size:1rem; font-weight:600; cursor:pointer; border:none; text-decoration:none; text-align:center; transition:transform .18s ease, box-shadow .25s ease; }
-        .btn-yes { color:#fff; background:linear-gradient(180deg,var(--violet-2),#5b3ce0); box-shadow:0 8px 30px var(--glow), inset 0 1px 0 rgba(255,255,255,0.25); margin-bottom:14px; }
-        .btn-yes:hover { transform:translateY(-2px); box-shadow:0 14px 44px var(--glow), inset 0 1px 0 rgba(255,255,255,0.3); }
-        .btn-skip { display:block; width:100%; background:none; border:none; color:var(--text-faint); font-size:0.85rem; cursor:pointer; padding:10px; font-family:var(--font-body); text-decoration:none; text-align:center; }
-        .btn-skip:hover { color:var(--text-dim); text-decoration:underline; }
+        /* Line items */
+        .line { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; }
+        .line-name { font-size:0.95rem; font-weight:500; }
+        .line-price { font-family:var(--font-mono); font-size:0.95rem; font-weight:600; }
 
-        .trust { margin-top:24px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-size:0.76rem; color:var(--text-dim); }
+        .divider { height:1px; background:var(--border); margin:0 24px; }
+
+        /* Upsell line */
+        .upsell-line { padding:16px 24px; cursor:pointer; transition:background .2s; display:flex; gap:14px; align-items:flex-start; }
+        .upsell-line:hover { background:rgba(124,92,252,0.04); }
+        .upsell-check {
+            flex-shrink:0; width:22px; height:22px; border-radius:6px; border:2px solid var(--border);
+            display:grid; place-items:center; margin-top:1px; transition:all .2s; cursor:pointer;
+        }
+        .upsell-check.on { background:var(--violet); border-color:var(--violet); }
+        .upsell-check.on::after { content:"\2713"; color:#fff; font-weight:800; font-size:0.78rem; }
+        .upsell-body { flex:1; }
+        .upsell-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+        .upsell-name { font-size:0.9rem; font-weight:500; }
+        .upsell-amt { font-family:var(--font-mono); font-size:0.85rem; color:var(--violet-2); }
+        .upsell-desc { font-size:0.78rem; color:var(--text-dim); line-height:1.45; }
+
+        /* Total */
+        .total-line { display:flex; justify-content:space-between; align-items:center; padding:18px 24px; border-top:1px solid var(--border); }
+        .total-label { font-size:0.95rem; font-weight:600; }
+        .total-price { font-family:var(--font-mono); font-size:1.3rem; font-weight:700; transition:color .2s; }
+
+        /* CTA */
+        .cta { display:block; width:100%; margin-top:18px; padding:17px; border-radius:12px; text-align:center; text-decoration:none;
+            font-family:var(--font-body); font-size:1rem; font-weight:600; color:#fff; cursor:pointer; border:none;
+            background:linear-gradient(180deg,var(--violet-2),#5b3ce0);
+            box-shadow:0 8px 30px var(--glow), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition:transform .18s, box-shadow .25s; }
+        .cta:hover { transform:translateY(-2px); box-shadow:0 14px 44px var(--glow), inset 0 1px 0 rgba(255,255,255,0.3); }
+
+        /* Trust */
+        .trust { margin-top:18px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-size:0.74rem; color:var(--text-dim); }
         .trust span { display:flex; align-items:center; gap:5px; }
         .trust span::before { content:""; width:5px; height:5px; border-radius:50%; background:var(--green); }
 
+        /* Back link */
+        .back { display:block; text-align:center; margin-top:20px; font-size:0.82rem; color:var(--text-faint); text-decoration:none; }
+        .back:hover { color:var(--text-dim); text-decoration:underline; }
+
         @media (max-width:480px) {
-            .card { padding:36px 22px 32px; }
-            h1 { font-size:1.4rem; }
-            .price-vip { font-size:1.7rem; }
+            body { padding:16px; }
+            .line, .upsell-line, .total-line, .order-header { padding-left:18px; padding-right:18px; }
+            .divider { margin:0 18px; }
         }
     </style>
 </head>
 <body>
-    <div class="bg"></div>
-    <div class="card">
+    <div class="page">
         <div class="logo"><span class="dot"></span>Sniperr</div>
-        <div class="eyebrow">UPGRADE YOUR ORDER</div>
-        <h1>Want <span class="grad">VIP 1-on-1 support</span>?</h1>
-        <p class="desc">Get a dedicated Sniperr specialist assigned to you personally — priority setup for your exact build, custom tuning, and direct message access whenever you need help. Guaranteed response, 24/7.</p>
 
-        <div class="price-block">
-            <div class="price-row">
-                <span class="price-vip" id="price">$199.99</span>
-                <span class="price-label">one-time</span>
+        <div class="order-card">
+            <div class="order-header">
+                <h2>Your order</h2>
             </div>
-            <span class="includes">SCRIPT + VIP 1-ON-1 SUPPORT INCLUDED</span>
+
+            <!-- Main product -->
+            <div class="line">
+                <span class="line-name" id="productName">Sniperr Script</span>
+                <span class="line-price" id="productPrice">$49.99</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Upsell -->
+            <div class="upsell-line" id="upsellRow" onclick="toggleUpsell()">
+                <div class="upsell-check" id="upsellCheck"></div>
+                <div class="upsell-body">
+                    <div class="upsell-top">
+                        <span class="upsell-name">VIP 1-on-1 Support</span>
+                        <span class="upsell-amt">+$150.00</span>
+                    </div>
+                    <div class="upsell-desc">Personal specialist, priority setup, custom tuning for your build, direct message access 24/7.</div>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="total-line">
+                <span class="total-label">Total</span>
+                <span class="total-price" id="totalPrice">$49.99</span>
+            </div>
         </div>
 
-        <a class="btn btn-yes" id="btnYes" href="#">Yes, upgrade to VIP →</a>
-        <a class="btn-skip" id="btnSkip" href="#">No thanks, just the script</a>
+        <a class="cta" id="ctaBtn" href="#">Proceed to checkout</a>
 
         <div class="trust">
             <span>Instant access</span>
-            <span>Direct message support</span>
-            <span>Custom tuning</span>
+            <span>One-time payment</span>
+            <span>Lifetime updates</span>
         </div>
+
+        <a class="back" id="backLink" href="index.html">&larr; Back to product</a>
     </div>
 
     <script>
-    const LINKS = {
-        apex:  { std: "https://whop.com/checkout/plan_ByTax0rsVyR2R",    vip: "https://whop.com/checkout/plan_mQhK45xAeDFci" },
-        nba2k: { std: "https://whop.com/checkout/plan_ZIuA0d1p2HwSB",    vip: "https://whop.com/checkout/plan_76bgPuMmtMxlB" },
-        cod:   { std: "https://whop.com/checkout/plan_0xn4lqCl2C3hP",    vip: "https://whop.com/checkout/plan_OgWlXRgFyx0Ia" },
+    const GAMES = {
+        apex: {
+            name: "Sniperr Apex Legends Script",
+            price: 49.99,
+            std: "https://whop.com/checkout/plan_ByTax0rsVyR2R",
+            vip: "https://whop.com/checkout/plan_mQhK45xAeDFci",
+            back: "apex.html",
+        },
+        nba2k: {
+            name: "Sniperr NBA 2K26 Script",
+            price: 49.99,
+            std: "https://whop.com/checkout/plan_ZIuA0d1p2HwSB",
+            vip: "https://whop.com/checkout/plan_76bgPuMmtMxlB",
+            back: "index.html",
+        },
+        cod: {
+            name: "Sniperr Black Ops 7 + Warzone Script",
+            price: 49.99,
+            std: "https://whop.com/checkout/plan_0xn4lqCl2C3hP",
+            vip: "https://whop.com/checkout/plan_OgWlXRgFyx0Ia",
+            back: "cod.html",
+        },
     };
-    const NAMES = { apex: "Apex Legends", nba2k: "NBA 2K26", cod: "Black Ops 7" };
+    const VIP_ADD = 150.00;
 
     const params = new URLSearchParams(location.search);
-    const game = params.get("game") || "apex";
-    const g = LINKS[game] || LINKS.apex;
+    const gameKey = params.get("game") || "apex";
+    const g = GAMES[gameKey] || GAMES.apex;
 
-    document.getElementById("btnYes").href = g.vip;
-    document.getElementById("btnSkip").href = g.std;
-    document.title = "Sniperr — Upgrade " + (NAMES[game] || "Your Order");
+    let upsellOn = false;
+
+    document.getElementById("productName").textContent = g.name;
+    document.getElementById("productPrice").textContent = "$" + g.price.toFixed(2);
+    document.getElementById("backLink").href = g.back;
+    document.title = "Sniperr — Confirm: " + g.name;
+
+    function render() {
+        const total = g.price + (upsellOn ? VIP_ADD : 0);
+        document.getElementById("totalPrice").textContent = "$" + total.toFixed(2);
+        document.getElementById("upsellCheck").classList.toggle("on", upsellOn);
+        document.getElementById("ctaBtn").href = upsellOn ? g.vip : g.std;
+    }
+
+    function toggleUpsell() {
+        upsellOn = !upsellOn;
+        render();
+    }
+
+    render();
     </script>
 </body>
 </html>
