@@ -3,6 +3,10 @@
    ============================================================ */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+.mob-only { display: none; }
+span.mob-only, span.dt-only { display: inline; }
+span.mob-only { display: none; }
+
 :root {
     /* Base / surfaces */
     --bg: #070710;
@@ -484,6 +488,14 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     .feature-tabs { gap: 6px; }
     .feature-tab { padding: 9px 16px; font-size: 0.82rem; }
+
+    /* Mobile-lean text: show short copy, hide verbose */
+    .dt-only  { display: none !important; }
+    .mob-only { display: block !important; }
+    span.dt-only  { display: none !important; }
+    span.mob-only { display: inline !important; }
+    ul.mob-only { display: block !important; list-style: none; }
+    .tc-desc  { display: none; }
 }
 @media (max-width: 400px) {
     .stats-bar, .weapon-grid { grid-template-columns: 1fr; }

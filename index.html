@@ -36,7 +36,8 @@
         <section class="section hero">
             <div class="hero-pill"><span class="live"></span> Trusted by ranked hoopers · 88%+ green rate in Rec &amp; Pro-Am</div>
             <h1>The <span class="grad">auto-green</span> NBA 2K26<br>Cronus Zen script</h1>
-            <p class="hero-sub">AI times every release - catch & shoot, off-dribble, fades, no-dips. Greens online, not just MyCourt.</p>
+            <p class="hero-sub dt-only">AI times every release - catch & shoot, off-dribble, fades, no-dips. Greens online, not just MyCourt.</p>
+            <p class="hero-sub mob-only">AI auto-green. Every shot type. Online, not just MyCourt.</p>
             <div class="rating-row"><span class="stars">★★★★★</span> 4.9 / 5 · 1,180 verified reviews</div>
             <div class="price-row">
                 <span class="old-price">$80</span>
@@ -107,7 +108,8 @@
             <div class="center" style="margin-bottom:40px;">
                 <p class="eyebrow center">INTERACTIVE TELEMETRY</p>
                 <h2 class="h2">Flip it on. Watch every shot turn green.</h2>
-                <p class="sub">These are your release markers on the timing bar. Toggle Sniperr and watch them snap into the perfect window - the same AI timing running on your Zen, adjusted for your build and online latency.</p>
+                <p class="sub dt-only">These are your release markers on the timing bar. Toggle Sniperr and watch them snap into the perfect window - the same AI timing running on your Zen, adjusted for your build and online latency.</p>
+                <p class="sub mob-only">Toggle it on. Watch every release land green.</p>
             </div>
             <div class="demo-wrap">
                 <div class="demo-stage">
@@ -125,7 +127,7 @@
                         <div class="readout"><span class="k">Makes</span><span class="v">4 / 10</span></div>
                         <div class="readout"><span class="k">Release window</span><span class="v"> - </span></div>
                     </div>
-                    <p style="color:var(--text-dim); font-size:0.85rem; margin-top:18px;">Auto-green reads catch &amp; shoot, off-dribble, fades and no-dips in real time - and adds an online latency offset so it greens in Rec and Pro-Am, not just MyCourt.</p>
+                    <p class="dt-only" style="color:var(--text-dim); font-size:0.85rem; margin-top:18px;">Auto-green reads catch &amp; shoot, off-dribble, fades and no-dips in real time - and adds an online latency offset so it greens in Rec and Pro-Am, not just MyCourt.</p>
                 </div>
             </div>
         </section>
@@ -135,31 +137,32 @@
             <div class="center" style="margin-bottom:36px;">
                 <p class="eyebrow center">WHY YOU'VE BEEN BURNED BEFORE</p>
                 <h2 class="h2">Why almost every 2K green script fails</h2>
-                <p class="sub">If you've tried "auto-green" scripts that bricked online, here's the engineering reason - and how we fixed each one.</p>
+                <p class="sub dt-only">If you've tried "auto-green" scripts that bricked online, here's the engineering reason - and how we fixed each one.</p>
+                <p class="sub mob-only">Here's why they failed and how we fixed it.</p>
             </div>
             <div class="teardown-grid">
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 01</div>
                     <h3>One fixed timing for every shot</h3>
-                    <p>Cheap scripts use a single ms value. It greens standing catch-and-shoots but bricks every off-dribble, fade, and no-dip because the release window is different.</p>
+                    <p class="tc-desc">Cheap scripts use a single ms value. It greens standing catch-and-shoots but bricks every off-dribble, fade, and no-dip because the release window is different.</p>
                     <div class="fix">Sniperr fix: <b>separate AI windows for catch &amp; shoot, off-dribble, fades and no-dips</b>.</div>
                 </div>
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 02</div>
                     <h3>Dies the moment you go online</h3>
-                    <p>Lab timing is useless in Rec. Network latency shifts your release window, so "perfect" offline values turn into reds in real games.</p>
+                    <p class="tc-desc">Lab timing is useless in Rec. Network latency shifts your release window, so "perfect" offline values turn into reds in real games.</p>
                     <div class="fix">Sniperr fix: <b>built-in online latency offset</b> that compensates for network delay automatically.</div>
                 </div>
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 03</div>
                     <h3>No build / animation matching</h3>
-                    <p>Your jumpshot base and release speed change the window. Generic scripts ignore this, so they never match your actual animation.</p>
+                    <p class="tc-desc">Your jumpshot base and release speed change the window. Generic scripts ignore this, so they never match your actual animation.</p>
                     <div class="fix">Sniperr fix: <b>tempo MS tuned to your build</b> with practice-facility calibration values included.</div>
                 </div>
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 04</div>
                     <h3>Shooting only - nothing else</h3>
-                    <p>Greens alone don't win games. You still get cooked on dribble moves, drained on stamina, and beaten to spots.</p>
+                    <p class="tc-desc">Greens alone don't win games. You still get cooked on dribble moves, drained on stamina, and beaten to spots.</p>
                     <div class="fix">Sniperr fix: <b>auto dribbles, infinite stamina, auto quick-stop and meter dunk</b> in the same script.</div>
                 </div>
             </div>
@@ -171,13 +174,19 @@
                 <div>
                     <p class="eyebrow">THE AUTO-GREEN ENGINE</p>
                     <h2 class="h2">Why our green lands every time</h2>
-                    <p>Most scripts hard-code one release time. The real green window <b style="color:var(--text)">moves</b> - by shot type, by build, and by online latency.</p>
-                    <p>Sniperr models all three. It detects whether you're shooting catch &amp; shoot, off the dribble, a fade or a no-dip, applies the right AI window, and layers an online offset so the timing holds up in Rec and Pro-Am - not just in MyCourt.</p>
-                    <ul class="feature-list">
+                    <p class="dt-only">Most scripts hard-code one release time. The real green window <b style="color:var(--text)">moves</b> - by shot type, by build, and by online latency.</p>
+                    <p class="dt-only">Sniperr models all three. It detects whether you're shooting catch &amp; shoot, off the dribble, a fade or a no-dip, applies the right AI window, and layers an online offset so the timing holds up in Rec and Pro-Am - not just in MyCourt.</p>
+                    <p class="mob-only">Sniperr detects each shot type and applies the right timing, with online offset built in.</p>
+                    <ul class="feature-list dt-only">
                         <li>AI auto-green on catch &amp; shoot, off-dribble, fades, no-dips</li>
                         <li>Button tempo &amp; tap-shot - RS flick greens with ms precision</li>
                         <li>Online latency offset for Rec / Pro-Am</li>
                         <li>Per-build tempo values, calibrated in the practice facility</li>
+                    </ul>
+                    <ul class="feature-list mob-only">
+                        <li>Auto-green on every shot type</li>
+                        <li>Button tempo tuned to your build</li>
+                        <li>Online offset for Rec and Pro-Am</li>
                     </ul>
                 </div>
                 <div class="track-vis" style="display:grid;place-items:center;">
@@ -238,7 +247,8 @@
                 <div class="center">
                     <p class="eyebrow center">THE STUDIO BEHIND SNIPERR</p>
                     <h2 class="h2">Built by a team that's done this for years</h2>
-                    <p class="sub">Not a one-off forum upload. Sniperr is a small, focused studio shipping precision scripts across multiple games and hundreds of patches since 2021.</p>
+                    <p class="sub dt-only">Not a one-off forum upload. Sniperr is a small, focused studio shipping precision scripts across multiple games and hundreds of patches since 2021.</p>
+                    <p class="sub mob-only">Precision scripts since 2021. Multiple games. Hundreds of patches.</p>
                 </div>
                 <div class="timeline">
                     <div class="tl-item"><div class="yr">2021</div><div class="tl-h">First profiles</div><p>Started reverse-engineering timing windows and shipping per-build configs.</p></div>
@@ -254,8 +264,9 @@
                     </div>
                     <div>
                         <h3 style="font-size:1.5rem; margin-bottom:12px;">Why we build it differently</h3>
-                        <p style="color:var(--text-dim); margin-bottom:14px;">Most green scripts are dumped online and die after one patch. We treat this like real software: versioned releases, patch-day re-calibration, and a window for every shot type because "close enough" bricks online.</p>
-                        <p style="color:var(--text-dim);">That's why players who've tried everything else stay with Sniperr - and why we can say zero bans in three-plus years and mean it.</p>
+                        <p class="dt-only" style="color:var(--text-dim); margin-bottom:14px;">Most green scripts are dumped online and die after one patch. We treat this like real software: versioned releases, patch-day re-calibration, and a window for every shot type because "close enough" bricks online.</p>
+                        <p class="dt-only" style="color:var(--text-dim);">That's why players who've tried everything else stay with Sniperr - and why we can say zero bans in three-plus years and mean it.</p>
+                        <p class="mob-only" style="color:var(--text-dim);">Real software, not a forum dump. Zero bans in 3+ years.</p>
                     </div>
                 </div>
             </div>
@@ -299,13 +310,20 @@
                     <div class="shield">🛡️</div>
                     <p class="eyebrow" style="margin-top:14px;">SECURITY &amp; DETECTION</p>
                     <h2 class="h2" style="font-size:1.9rem;">Why it's safe - the technical truth</h2>
-                    <p style="color:var(--text-dim);">It's not a software hack. Cronus Zen sits between your controller and console as a hardware device - 2K only ever sees standard controller input.</p>
+                    <p class="dt-only" style="color:var(--text-dim);">It's not a software hack. Cronus Zen sits between your controller and console as a hardware device - 2K only ever sees standard controller input.</p>
+                    <p class="mob-only" style="color:var(--text-dim);">Hardware device, not software. Anti-cheat can't see it.</p>
                 </div>
-                <ul class="sec-points">
+                <ul class="sec-points dt-only">
                     <li>▹ <span><b>Hardware-level, not software.</b> Anti-cheat scans memory and files - it can't see input shaped on external hardware.</span></li>
                     <li>▹ <span><b>2K sees a normal controller.</b> No injection, no overlay, no memory reads.</span></li>
                     <li>▹ <span><b>0 bans reported</b> across thousands of installs in 3+ years.</span></li>
                     <li>▹ <span><b>Nothing touches the game.</b> You flash the script to the Zen, not to 2K.</span></li>
+                </ul>
+                <ul class="sec-points mob-only">
+                    <li>▹ <b>Hardware-level.</b> Anti-cheat can't detect it.</li>
+                    <li>▹ <b>Normal controller input.</b> No injection.</li>
+                    <li>▹ <b>0 bans</b> in 3+ years.</li>
+                    <li>▹ <b>Script goes on the Zen,</b> not on 2K.</li>
                 </ul>
             </div>
         </section>
@@ -323,7 +341,8 @@
             <div class="platform-content">
                 <div style="text-align:left;">
                     <h3>5-minute setup</h3>
-                    <p>No experience required. Our script generator auto-configures the perfect tempo for your build. PS5 needs a small one-time bypass (just a different way of plugging in the Zen). After that: download, flash to your Zen, calibrate in the practice facility, and green.</p>
+                    <p class="dt-only">No experience required. Our script generator auto-configures the perfect tempo for your build. PS5 needs a small one-time bypass (just a different way of plugging in the Zen). After that: download, flash to your Zen, calibrate in the practice facility, and green.</p>
+                    <p class="mob-only">Download, flash, calibrate. 5 minutes. Video tutorials included.</p>
                 </div>
                 <div class="vframe">
                     <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">PS5 SETUP</span></div>
@@ -336,12 +355,19 @@
         <section class="section reveal">
             <div class="whatyouget-box">
                 <p class="eyebrow">WHAT YOU'RE GETTING</p>
-                <ul class="get-list">
+                <ul class="get-list dt-only">
                     <li><b>AI Auto-Green</b> - catch &amp; shoot, off-dribble, fades, no-dips, all timed automatically</li>
                     <li><b>Button Tempo &amp; Tap-Shot</b> - ms-accurate rhythm tuned to your build</li>
                     <li><b>Online Latency Offset</b> - greens hold up in Rec and Pro-Am, not just MyCourt</li>
                     <li><b>Handles &amp; Stamina</b> - one-button dribble combos, infinite stamina, auto quick-stop, meter dunk</li>
                     <li><b>Lifetime updates</b> - free patch-day re-calibration, build value guides, and community access</li>
+                </ul>
+                <ul class="get-list mob-only">
+                    <li><b>AI Auto-Green</b> on every shot type</li>
+                    <li><b>Button Tempo</b> tuned to your build</li>
+                    <li><b>Online Offset</b> for Rec and Pro-Am</li>
+                    <li><b>Dribbles + Stamina</b> built in</li>
+                    <li><b>Lifetime updates</b> + community</li>
                 </ul>
             </div>
         </section>
@@ -351,12 +377,12 @@
             <p class="eyebrow center">ANSWERS</p>
             <h2 class="h2">Frequently asked questions</h2>
             <div class="faq-list">
-                <div class="faq-item"><button class="faq-q">Does auto-green actually work online?</button><div class="faq-a"><p>Yes. The biggest reason other scripts fail is they ignore network latency. Sniperr has a built-in online offset that shifts the timing window for Rec and Pro-Am, so you green in real games - not just MyCourt.</p></div></div>
-                <div class="faq-item"><button class="faq-q">Does it work for my build / jumpshot?</button><div class="faq-a"><p>Yes. We include tempo MS values for every height and base, and you fine-tune in the practice facility in about 2 minutes. Any jumpshot, any build.</p></div></div>
-                <div class="faq-item"><button class="faq-q">Can I get banned?</button><div class="faq-a"><p>Cronus Zen is hardware that sits between your controller and console - 2K only sees a normal controller. In 3+ years and thousands of uses, we've never had a single ban report.</p></div></div>
-                <div class="faq-item"><button class="faq-q">Is it updated regularly?</button><div class="faq-a"><p>Every patch. When 2K shifts timing or shooting, we re-calibrate within 24 hours and post the new version. Re-download and flash to your Zen.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Does auto-green actually work online?</button><div class="faq-a"><p><span class="dt-only">Yes. The biggest reason other scripts fail is they ignore network latency. Sniperr has a built-in online offset that shifts the timing window for Rec and Pro-Am, so you green in real games - not just MyCourt.</span><span class="mob-only">Yes. Built-in latency offset greens in Rec and Pro-Am, not just MyCourt.</span></p></div></div>
+                <div class="faq-item"><button class="faq-q">Does it work for my build / jumpshot?</button><div class="faq-a"><p><span class="dt-only">Yes. We include tempo MS values for every height and base, and you fine-tune in the practice facility in about 2 minutes. Any jumpshot, any build.</span><span class="mob-only">Yes. Includes values for every build. 2-min calibration.</span></p></div></div>
+                <div class="faq-item"><button class="faq-q">Can I get banned?</button><div class="faq-a"><p><span class="dt-only">Cronus Zen is hardware that sits between your controller and console - 2K only sees a normal controller. In 3+ years and thousands of uses, we've never had a single ban report.</span><span class="mob-only">Hardware-level. 2K sees a normal controller. 0 bans in 3+ years.</span></p></div></div>
+                <div class="faq-item"><button class="faq-q">Is it updated regularly?</button><div class="faq-a"><p><span class="dt-only">Every patch. When 2K shifts timing or shooting, we re-calibrate within 24 hours and post the new version. Re-download and flash to your Zen.</span><span class="mob-only">Every patch. Updated within 24 hours.</span></p></div></div>
                 <div class="faq-item"><button class="faq-q">What do I need to use this?</button><div class="faq-a"><p>A Cronus Zen device (~$100 on Amazon), a USB cable, and your console/PC. That's it.</p></div></div>
-                <div class="faq-item"><button class="faq-q">Is this a subscription?</button><div class="faq-a"><p>No. One-time $50 payment, lifetime access to all updates, the community, and support. No monthly fees.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Is this a subscription?</button><div class="faq-a"><p><span class="dt-only">No. One-time $50 payment, lifetime access to all updates, the community, and support. No monthly fees.</span><span class="mob-only">No. One-time $50, lifetime updates.</span></p></div></div>
             </div>
         </section>
 
