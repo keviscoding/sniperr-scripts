@@ -285,7 +285,7 @@ nav { max-width: var(--maxw); margin: 0 auto; padding: 16px 28px; display: flex;
 
 /* ===== Security ===== */
 .security { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 44px; border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(52,211,153,0.06), transparent); border: 1px solid var(--hairline); }
-.security .shield { font-size: 2.4rem; }
+.security .shield { font-size: 2.4rem; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 14px; background: rgba(124,92,252,0.12); color: var(--green); }
 .sec-points { list-style: none; display: grid; gap: 14px; }
 .sec-points li { display: flex; gap: 12px; font-size: 0.92rem; color: var(--text-soft); }
 .sec-points li b { color: var(--green); }
