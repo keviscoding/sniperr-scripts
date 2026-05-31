@@ -316,3 +316,23 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
         y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", id);
 })();
+
+// ---- Checkout upsell / order bump ----
+(function upsell() {
+    const cfg = window.SNIPERR_CHECKOUT;
+    if (!cfg || !cfg.base) return;
+    const hasUpsell = cfg.upsell && cfg.upsell.indexOf("REPLACE") === -1;
+    const upsellUrl = hasUpsell ? cfg.upsell : cfg.base;  // safe fallback until the bundle link is set
+    const links = Array.from(document.querySelectorAll('a[href*="whop.com/checkout"]'));
+    const checks = Array.from(document.querySelectorAll('.upsell-check'));
+    const primaries = Array.from(document.querySelectorAll('a.btn-primary'));
+    primaries.forEach(b => { if (!b.dataset.label) b.dataset.label = b.textContent.trim(); });
+    function apply(on) {
+        checks.forEach(c => { c.checked = on; const card = c.closest('.upsell'); if (card) card.classList.toggle('on', on); });
+        links.forEach(a => a.href = on ? upsellUrl : cfg.base);
+        primaries.forEach(b => b.textContent = on ? (b.dataset.label + ' + Support') : b.dataset.label);
+    }
+    links.forEach(a => a.href = cfg.base);   // normalize to base on load
+    checks.forEach(c => c.addEventListener('change', e => apply(e.target.checked)));
+    apply(false);
+})();

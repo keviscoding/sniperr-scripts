@@ -396,6 +396,36 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 .coupon-decline { display: block; margin-top: 14px; font-size: 0.8rem; color: var(--text-faint); background: none; border: none; cursor: pointer; width: 100%; }
 .coupon-decline:hover { color: var(--text-dim); text-decoration: underline; }
 
+/* ===== Checkout upsell / order bump ===== */
+.upsell {
+    display: flex; align-items: flex-start; gap: 14px; max-width: 520px; margin: 0 auto 18px;
+    padding: 16px 18px; border-radius: 14px; cursor: pointer; text-align: left; position: relative; overflow: hidden;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(120deg, var(--violet), var(--cyan)) border-box;
+    border: 1px solid transparent; transition: transform .2s, box-shadow .25s;
+}
+.upsell::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(120deg, transparent, rgba(124,92,252,0.14), transparent);
+    transform: translateX(-100%); animation: upsellShimmer 3.6s ease-in-out infinite;
+}
+@keyframes upsellShimmer { 0% { transform: translateX(-100%); } 55%, 100% { transform: translateX(100%); } }
+.upsell:hover { transform: translateY(-2px); box-shadow: 0 12px 34px var(--glow); }
+.upsell input { position: absolute; opacity: 0; pointer-events: none; }
+.upsell-box {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px; border: 2px solid var(--violet);
+    display: grid; place-items: center; margin-top: 2px; transition: all .2s; position: relative; z-index: 1;
+}
+.upsell-box::after { content: "\2713"; color: #fff; font-weight: 800; font-size: 0.95rem; transform: scale(0); transition: transform .25s cubic-bezier(.2,1.7,.4,1); }
+.upsell.on .upsell-box { background: linear-gradient(135deg, var(--violet), var(--cyan)); border-color: transparent; }
+.upsell.on .upsell-box::after { transform: scale(1); }
+.upsell-body { display: flex; flex-direction: column; gap: 3px; position: relative; z-index: 1; }
+.upsell-title { font-family: var(--font-display); font-weight: 600; font-size: 0.98rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.upsell-price { font-family: var(--font-mono); font-size: 0.78rem; color: var(--cyan); border: 1px solid rgba(61,240,224,0.4); border-radius: 999px; padding: 2px 9px; }
+.upsell-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.45; }
+.upsell.on { box-shadow: 0 0 0 1px var(--violet), 0 14px 40px var(--glow); animation: upsellPop .32s ease; }
+@keyframes upsellPop { 0% { transform: scale(1); } 45% { transform: scale(1.025); } 100% { transform: scale(1); } }
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
     .demo-wrap, .split, .security, .founder, .platform-content { grid-template-columns: 1fr; }
