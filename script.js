@@ -272,6 +272,10 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     const open = () => {
         if (shown) return;
         try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+        // Don't show the coupon if they came back from the checkout/upgrade page
+        // (they were about to pay full price — don't undercut them).
+        try { if (document.referrer && document.referrer.includes('upgrade.html')) return; } catch (e) {}
+        try { if (document.referrer && document.referrer.includes('whop.com')) return; } catch (e) {}
         shown = true; overlay.classList.add('show');
         try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     };
@@ -279,7 +283,10 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     overlay.querySelector('.coupon-decline').addEventListener('click', close);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
     overlay.querySelector('.coupon-copy').addEventListener('click', (e) => {
-        navigator.clipboard.writeText(CODE);
+        try {
+            if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(CODE); }
+            else { const t=document.createElement('textarea'); t.value=CODE; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.focus(); t.select(); document.execCommand('copy'); document.body.removeChild(t); }
+        } catch(_){}
         e.target.textContent = 'Copied'; e.target.classList.add('copied');
     });
     overlay.querySelector('#couponCta').addEventListener('click', () => { try { sessionStorage.setItem(KEY, '1'); } catch (e) {} });
@@ -346,7 +353,27 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
 (function checkoutRoute() {
     const cfg = window.SNIPERR_CHECKOUT;
     if (!cfg || !cfg.game) return;
+    const upgradeUrl = "upgrade.html?game=" + encodeURIComponent(cfg.game);
     document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(a => {
-        a.href = "upgrade.html?game=" + encodeURIComponent(cfg.game);
+        a.href = upgradeUrl;
     });
+    // Also update the sticky-price CTA if present.
+    const spCta = document.querySelector('.sticky-price .sp-cta');
+    if (spCta) spCta.href = upgradeUrl;
+})();
+
+// ---- Sticky price reminder (shows when hero scrolls out of view) ----
+(function stickyPrice() {
+    const hero = document.querySelector('.section.hero');
+    if (!hero) return;
+    const bar = document.createElement('div');
+    bar.className = 'sticky-price';
+    const cfg = window.SNIPERR_CHECKOUT || {};
+    const upgradeUrl = cfg.game ? ("upgrade.html?game=" + cfg.game) : "#";
+    bar.innerHTML = '<span class="sp-old">$80</span><span class="sp-new">$50</span><span class="sp-label">one-time</span><a class="sp-cta" href="' + upgradeUrl + '">Get Sniperr &rarr;</a>';
+    document.body.appendChild(bar);
+    const obs = new IntersectionObserver(entries => {
+        bar.classList.toggle('show', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    obs.observe(hero);
 })();
