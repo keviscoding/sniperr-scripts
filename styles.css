@@ -445,7 +445,9 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
     /* Hero mobile reorder: pill(1) h1(2) video(3) sub(4) stars(5) price(6) CTA(7) trust(8) */
     .hero .hero-pill   { order: 1; }
     .hero h1           { order: 2; font-size: 2rem; margin-bottom: 12px; }
-    .hero .vsl-wrap     { order: 3; margin-top: 8px !important; margin-bottom: 16px; }
+    .hero .vsl-wrap     { order: 3; margin-top: 8px !important; margin-bottom: 16px; max-width: none; width: calc(100% + 36px); margin-left: -18px; margin-right: -18px; }
+    .hero .vsl-wrap .vframe { border-radius: 0; }
+    .hero .vsl-wrap .vframe::before { border-radius: 0; }
     .hero .hero-sub    { order: 4; font-size: 0.92rem; margin-bottom: 14px; }
     .hero .rating-row  { order: 5; margin-bottom: 10px; }
     .hero .price-row   { order: 6; }

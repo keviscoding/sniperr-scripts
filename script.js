@@ -240,8 +240,10 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
 // ---- Exit-intent coupon ($10 off, SNIPERR04) ----
 (function coupon() {
     const CODE = (window.SNIPERR_COUPON || 'SNIPERR04');
-    const checkout = window.SNIPERR_CHECKOUT ||
-        (document.querySelector('a[href*="whop.com/checkout"]') || {}).href || '#';
+    const cfg = window.SNIPERR_CHECKOUT || {};
+    const checkout = cfg.game
+        ? ("upgrade.html?game=" + encodeURIComponent(cfg.game))
+        : ((document.querySelector('a[href*="upgrade.html"]') || {}).href || '#');
     const KEY = 'sniperr_coupon_seen';
     let armed = false, shown = false, intent = false;
 
