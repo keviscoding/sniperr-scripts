@@ -396,36 +396,7 @@ footer { border-top: 1px solid var(--hairline); padding: 64px 28px 44px; max-wid
 .coupon-decline { display: block; margin-top: 14px; font-size: 0.8rem; color: var(--text-faint); background: none; border: none; cursor: pointer; width: 100%; }
 .coupon-decline:hover { color: var(--text-dim); text-decoration: underline; }
 
-/* ===== Checkout upsell modal (shown AFTER they click "Get Sniperr") ===== */
-.up-overlay {
-    position: fixed; inset: 0; z-index: 1100; display: none;
-    align-items: center; justify-content: center; padding: 24px;
-    background: rgba(4,4,10,0.82); backdrop-filter: blur(8px);
-    opacity: 0; transition: opacity .2s ease;
-}
-.up-overlay.show { display: flex; opacity: 1; }
-.up-modal {
-    width: 100%; max-width: 440px; text-align: center;
-    background: linear-gradient(180deg, var(--surface-2), var(--surface));
-    border: 1px solid var(--border-solid); border-radius: var(--radius-lg);
-    padding: 36px 30px; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-    transform: translateY(14px) scale(0.97); transition: transform .3s cubic-bezier(.2,.8,.2,1);
-    overflow: hidden; position: relative;
-}
-.up-overlay.show .up-modal { transform: none; }
-.up-modal::before {
-    content: ""; position: absolute; inset: 0; padding: 1px; border-radius: var(--radius-lg); pointer-events: none;
-    background: linear-gradient(130deg, var(--violet), transparent 45%, var(--cyan));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
-}
-.up-eyebrow { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 2px; color: var(--violet-2); text-transform: uppercase; margin-bottom: 14px; }
-.up-modal h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
-.up-modal h3 .grad { background: linear-gradient(120deg, var(--violet-2), var(--cyan)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.up-modal p { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 22px; line-height: 1.55; }
-.up-modal .up-price { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--cyan); margin-bottom: 22px; display: block; }
-.up-modal .btn { width: 100%; margin-bottom: 10px; }
-.up-skip { display: block; width: 100%; margin-top: 6px; font-size: 0.82rem; color: var(--text-faint); background: none; border: none; cursor: pointer; padding: 8px; font-family: var(--font-body); }
-.up-skip:hover { color: var(--text-dim); text-decoration: underline; }
+/* (upsell is now a dedicated page — upgrade.html — no modal CSS needed) */
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {

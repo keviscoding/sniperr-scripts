@@ -317,42 +317,11 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     })(window, document, "clarity", "script", id);
 })();
 
-// ---- Checkout upsell modal (shown after they click "Get Sniperr") ----
-(function upsell() {
+// ---- Checkout routing (via upgrade page) ----
+(function checkoutRoute() {
     const cfg = window.SNIPERR_CHECKOUT;
-    if (!cfg || !cfg.base) return;
-    const hasBundle = cfg.upsell && cfg.upsell.indexOf("REPLACE") === -1;
-    const bundleUrl = hasBundle ? cfg.upsell : cfg.base;
-
-    const overlay = document.createElement('div');
-    overlay.className = 'up-overlay';
-    overlay.innerHTML = `
-        <div class="up-modal">
-            <div class="up-eyebrow">BEFORE YOU CHECK OUT</div>
-            <h3>Want a <span class="grad">dedicated specialist</span>?</h3>
-            <p>Get your own 1-on-1 support agent on call 24/7 — priority setup, custom tuning for your exact build and loadout, and a direct line whenever you need help. Guaranteed response.</p>
-            <span class="up-price">+ $150 one-time</span>
-            <a id="upYes" class="btn btn-primary btn-arrow" href="${bundleUrl}" target="_self">Yes, add 1-on-1 support</a>
-            <button id="upNo" class="up-skip">No thanks, just the script</button>
-        </div>`;
-    document.body.appendChild(overlay);
-
-    function show() { overlay.classList.add('show'); }
-    function hide() { overlay.classList.remove('show'); }
-
-    document.getElementById('upNo').addEventListener('click', () => {
-        hide();
-        window.location.href = cfg.base;
-    });
-    overlay.addEventListener('click', e => { if (e.target === overlay) { hide(); } });
-
-    // Intercept every "Get Sniperr" checkout link.
+    if (!cfg || !cfg.game) return;
     document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(a => {
-        // Don't intercept the upsell modal's own "Yes" button.
-        if (a.id === 'upYes') return;
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            show();
-        });
+        a.href = "upgrade.html?game=" + encodeURIComponent(cfg.game);
     });
 })();

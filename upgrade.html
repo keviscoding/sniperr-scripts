@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniperr — Upgrade Your Order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg:#070710; --surface:#0f0f1a; --surface-2:#14141f; --border:#23233360;
+            --text:#f4f4fa; --text-soft:#c3c3d4; --text-dim:#7c7c93; --text-faint:#55556a;
+            --violet:#7c5cfc; --violet-2:#9d7bff; --cyan:#3df0e0;
+            --glow:rgba(124,92,252,0.45); --green:#34d399;
+            --font-display:'Space Grotesk','Segoe UI',system-ui,sans-serif;
+            --font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+            --font-mono:'JetBrains Mono','SF Mono',ui-monospace,monospace;
+        }
+        html { scroll-behavior:smooth; }
+        body { font-family:var(--font-body); background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased; }
+        .bg { position:fixed; inset:0; z-index:-1; pointer-events:none;
+            background: radial-gradient(800px 400px at 50% 30%, rgba(124,92,252,0.14), transparent 70%), var(--bg); }
+
+        .card {
+            width:100%; max-width:520px; text-align:center;
+            background: var(--surface); border:1px solid var(--border); border-radius:20px;
+            padding:48px 36px 40px; position:relative; overflow:hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+        }
+        .card::before { content:""; position:absolute; inset:0; border-radius:20px; padding:1px; pointer-events:none;
+            background:linear-gradient(130deg, var(--violet), transparent 45%, var(--cyan));
+            -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; }
+
+        .logo { font-family:var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:28px; display:flex; align-items:center; justify-content:center; gap:8px; }
+        .dot { width:8px; height:8px; border-radius:50%; background:var(--violet); box-shadow:0 0 12px var(--violet); }
+        .eyebrow { font-family:var(--font-mono); font-size:0.68rem; letter-spacing:2px; color:var(--violet-2); text-transform:uppercase; margin-bottom:16px; }
+        h1 { font-family:var(--font-display); font-size:1.65rem; font-weight:700; line-height:1.2; margin-bottom:14px; }
+        h1 .grad { background:linear-gradient(120deg,var(--violet-2),var(--cyan)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .desc { color:var(--text-dim); font-size:0.92rem; line-height:1.6; margin-bottom:24px; max-width:420px; margin-left:auto; margin-right:auto; }
+
+        .price-block { margin-bottom:28px; }
+        .price-row { display:flex; align-items:baseline; justify-content:center; gap:12px; margin-bottom:6px; }
+        .price-std { text-decoration:line-through; color:var(--text-faint); font-size:1rem; }
+        .price-vip { font-family:var(--font-display); font-size:2rem; font-weight:700; }
+        .price-label { color:var(--text-dim); font-size:0.85rem; }
+        .includes { font-family:var(--font-mono); font-size:0.74rem; color:var(--cyan); letter-spacing:0.5px; }
+
+        .btn { display:block; width:100%; padding:17px; border-radius:12px; font-family:var(--font-body); font-size:1rem; font-weight:600; cursor:pointer; border:none; text-decoration:none; text-align:center; transition:transform .18s ease, box-shadow .25s ease; }
+        .btn-yes { color:#fff; background:linear-gradient(180deg,var(--violet-2),#5b3ce0); box-shadow:0 8px 30px var(--glow), inset 0 1px 0 rgba(255,255,255,0.25); margin-bottom:14px; }
+        .btn-yes:hover { transform:translateY(-2px); box-shadow:0 14px 44px var(--glow), inset 0 1px 0 rgba(255,255,255,0.3); }
+        .btn-skip { display:block; width:100%; background:none; border:none; color:var(--text-faint); font-size:0.85rem; cursor:pointer; padding:10px; font-family:var(--font-body); text-decoration:none; text-align:center; }
+        .btn-skip:hover { color:var(--text-dim); text-decoration:underline; }
+
+        .trust { margin-top:24px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; font-size:0.76rem; color:var(--text-dim); }
+        .trust span { display:flex; align-items:center; gap:5px; }
+        .trust span::before { content:""; width:5px; height:5px; border-radius:50%; background:var(--green); }
+
+        @media (max-width:480px) {
+            .card { padding:36px 22px 32px; }
+            h1 { font-size:1.4rem; }
+            .price-vip { font-size:1.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="card">
+        <div class="logo"><span class="dot"></span>Sniperr</div>
+        <div class="eyebrow">UPGRADE YOUR ORDER</div>
+        <h1>Want <span class="grad">VIP 1-on-1 support</span>?</h1>
+        <p class="desc">Get a dedicated Sniperr specialist assigned to you personally — priority setup for your exact build, custom tuning, and direct message access whenever you need help. Guaranteed response, 24/7.</p>
+
+        <div class="price-block">
+            <div class="price-row">
+                <span class="price-vip" id="price">$199.99</span>
+                <span class="price-label">one-time</span>
+            </div>
+            <span class="includes">SCRIPT + VIP 1-ON-1 SUPPORT INCLUDED</span>
+        </div>
+
+        <a class="btn btn-yes" id="btnYes" href="#">Yes, upgrade to VIP →</a>
+        <a class="btn-skip" id="btnSkip" href="#">No thanks, just the script</a>
+
+        <div class="trust">
+            <span>Instant access</span>
+            <span>Direct message support</span>
+            <span>Custom tuning</span>
+        </div>
+    </div>
+
+    <script>
+    const LINKS = {
+        apex:  { std: "https://whop.com/checkout/plan_ByTax0rsVyR2R",    vip: "https://whop.com/checkout/plan_mQhK45xAeDFci" },
+        nba2k: { std: "https://whop.com/checkout/plan_ZIuA0d1p2HwSB",    vip: "https://whop.com/checkout/plan_76bgPuMmtMxlB" },
+        cod:   { std: "https://whop.com/checkout/plan_0xn4lqCl2C3hP",    vip: "https://whop.com/checkout/plan_OgWlXRgFyx0Ia" },
+    };
+    const NAMES = { apex: "Apex Legends", nba2k: "NBA 2K26", cod: "Black Ops 7" };
+
+    const params = new URLSearchParams(location.search);
+    const game = params.get("game") || "apex";
+    const g = LINKS[game] || LINKS.apex;
+
+    document.getElementById("btnYes").href = g.vip;
+    document.getElementById("btnSkip").href = g.std;
+    document.title = "Sniperr — Upgrade " + (NAMES[game] || "Your Order");
+    </script>
+</body>
+</html>
