@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sniperr — Engineered Apex Legends Cronus Zen Script | Zero Recoil + Polar Aim Tracking</title>
+    <title>Sniperr - Engineered Apex Legends Cronus Zen Script | Zero Recoil + Polar Aim Tracking</title>
     <meta name="description" content="Sniperr engineers precision Cronus Zen scripts for Apex Legends. Per-weapon zero-recoil profiles, polar aim tracking, updated within 24h of every patch. PS5, Xbox, PC.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <div class="bg-grid"></div>
     <div class="bg-grain"></div>
 
-    <div class="announce">SEASON 29 OVERCLOCKED — RECOIL TABLES RE-TUNED · v29.4 SHIPPED &lt;24H AFTER PATCH</div>
+    <div class="announce">RECOIL TABLES RE-TUNED · SHIPPED &lt;24H AFTER PATCH</div>
 
     <!-- NAV -->
     <div class="nav-wrap" id="navWrap">
@@ -54,16 +54,37 @@
                 <span class="item">PS5 · Xbox · PC</span>
                 <span class="item">5-minute setup</span>
             </div>
+
+            <div class="vsl-wrap" style="margin-top:24px;">
+                <div class="vframe">
+                    <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">LIVE GAMEPLAY</span></div>
+                    <div class="video-embed">
+                        <div id="vidalytics_embed_BMCbJY2cyTy7qwkQ" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
+                        <script type="text/javascript">
+                        (function (v, i, d, a, l, y, t, c, s) {
+                            y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                            if (!vsl){vsl=function(u,cb){
+                                if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                                if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                                i.getElementsByTagName("head")[0].appendChild(s);
+                            };}
+                            vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                        })(window, document, 'Vidalytics', 'vidalytics_embed_BMCbJY2cyTy7qwkQ', 'https://fast.vidalytics.com/embeds/tlH3XS0p/BMCbJY2cyTy7qwkQ/');
+                        </script>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- MAIN VSL -->
+        <!-- (VSL moved into hero) -->
+        <!--
         <section class="section center reveal" id="watch">
             <p class="eyebrow center">SEE IT LIVE</p>
-            <h2 class="h2">Watch Sniperr dismantle Season 29 lobbies</h2>
-            <p class="sub">The AI-driven script in a real ranked match — no edits, no cuts.</p>
+            <h2 class="h2">Watch Sniperr dismantle ranked lobbies</h2>
+            <p class="sub">The AI-driven script in a real ranked match - no edits, no cuts.</p>
             <div class="vsl-wrap" style="margin-top:32px;">
                 <div class="vframe">
-                    <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">LIVE GAMEPLAY · SEASON 29</span></div>
+                    <div class="vframe-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="tag">LIVE GAMEPLAY</span></div>
                     <div class="video-embed">
                         <div id="vidalytics_embed_BMCbJY2cyTy7qwkQ" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
                         <script type="text/javascript">
@@ -87,7 +108,7 @@
             <div class="center" style="margin-bottom:40px;">
                 <p class="eyebrow center">INTERACTIVE TELEMETRY</p>
                 <h2 class="h2">Flip it on. Watch the recoil collapse.</h2>
-                <p class="sub">This is a real R-301 spray pattern. Toggle Sniperr and see the spread snap to a controllable line — the same correction running 60 times a second on your Zen.</p>
+                <p class="sub">This is a real R-301 spray pattern. Toggle Sniperr and see the spread snap to a controllable line - the same correction running 60 times a second on your Zen.</p>
             </div>
             <div class="demo-wrap">
                 <div class="demo-stage">
@@ -103,7 +124,7 @@
                         <div class="readout"><span class="k">Vertical recoil</span><span class="v" id="roRecoil">100%</span></div>
                         <div class="readout"><span class="k">Spray spread</span><span class="v" id="roSpread">42 px</span></div>
                         <div class="readout"><span class="k">Shots on target</span><span class="v" id="roHits">11 / 30</span></div>
-                        <div class="readout"><span class="k">Time-to-control</span><span class="v" id="roTtc">—</span></div>
+                        <div class="readout"><span class="k">Time-to-control</span><span class="v" id="roTtc"> - </span></div>
                     </div>
                     <p style="color:var(--text-dim); font-size:0.85rem; margin-top:18px;">Per-weapon profiles mean this same collapse happens automatically on every gun the moment you pick it up.</p>
                 </div>
@@ -115,7 +136,7 @@
             <div class="center" style="margin-bottom:36px;">
                 <p class="eyebrow center">WHY YOU'VE BEEN BURNED BEFORE</p>
                 <h2 class="h2">Why almost every Cronus script fails</h2>
-                <p class="sub">If you've tried scripts that "kind of" worked, here's the engineering reason they let you down — and exactly how we fixed each one.</p>
+                <p class="sub">If you've tried scripts that "kind of" worked, here's the engineering reason they let you down - and exactly how we fixed each one.</p>
             </div>
             <div class="teardown-grid">
                 <div class="teardown-card">
@@ -127,14 +148,14 @@
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 02</div>
                     <h3>No weapon detection</h3>
-                    <p>You swap to a sniper and the AR anti-recoil is still fighting you. Most scripts force you to manually switch profiles mid-fight — so nobody does.</p>
+                    <p>You swap to a sniper and the AR anti-recoil is still fighting you. Most scripts force you to manually switch profiles mid-fight - so nobody does.</p>
                     <div class="fix">Sniperr fix: <b>automatic weapon detection</b> reads your loadout and swaps the profile the instant you switch.</div>
                 </div>
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 03</div>
                     <h3>Anti-recoil fights aim assist</h3>
                     <p>Naive scripts pull straight down and cancel the game's rotational aim assist, making your aim feel floaty and disconnected from the target.</p>
-                    <div class="fix">Sniperr fix: <b>polar tracking tuned to ride aim assist</b>, not override it — so the stick stays glued to the target.</div>
+                    <div class="fix">Sniperr fix: <b>polar tracking tuned to ride aim assist</b>, not override it - so the stick stays glued to the target.</div>
                 </div>
                 <div class="teardown-card">
                     <div class="fail">✕ Failure 04</div>
@@ -155,7 +176,7 @@
                     <p>Sniperr models recoil in the same polar space the game does, then layers correction <i>with</i> the aim-assist pull instead of against it. The result is tracking that holds a strafing target through slides, jumps, and beam-strafes.</p>
                     <ul class="feature-list">
                         <li>Polar correction synced to in-game rotational aim assist</li>
-                        <li>Auto-sensitivity detection — no manual tuning</li>
+                        <li>Auto-sensitivity detection - no manual tuning</li>
                         <li>Jitter mode for Wingman / G7 precision fire</li>
                         <li>Holds lock through movement, not just standing duels</li>
                     </ul>
@@ -180,7 +201,7 @@
             <div class="feature-content active" id="tab-recoil">
                 <div class="feature-text">
                     <h3>AI Anti-Recoil</h3>
-                    <p>Per-weapon recoil profiles that auto-detect what you're holding. R-301, Flatline, R-99, Volt, Nemesis — every meta weapon tuned to near-zero recoil. Re-tuned within 24 hours of every patch.</p>
+                    <p>Per-weapon recoil profiles that auto-detect what you're holding. R-301, Flatline, R-99, Volt, Nemesis - every meta weapon tuned to near-zero recoil. Re-tuned within 24 hours of every patch.</p>
                     <ul class="feature-stats">
                         <li><span class="stat-num">65%</span> recoil reduction on R-301</li>
                         <li><span class="stat-num">57%</span> recoil reduction on Flatline</li>
@@ -349,11 +370,11 @@
                 <div class="timeline">
                     <div class="tl-item"><div class="yr">2021</div><div class="tl-h">First profiles</div><p>Started reverse-engineering recoil tables and shipping per-weapon configs.</p></div>
                     <div class="tl-item"><div class="yr">2023</div><div class="tl-h">Polar tracking</div><p>Built the aim engine that rides aim assist instead of fighting it.</p></div>
-                    <div class="tl-item"><div class="yr">2025</div><div class="tl-h">Auto-detection</div><p>Loadout-aware profile switching — zero manual config in a fight.</p></div>
+                    <div class="tl-item"><div class="yr">2025</div><div class="tl-h">Auto-detection</div><p>Loadout-aware profile switching - zero manual config in a fight.</p></div>
                     <div class="tl-item"><div class="yr">2026</div><div class="tl-h">1,200+ players</div><p>Three games, &lt;24h patch turnaround, and still zero bans reported.</p></div>
                 </div>
                 <div class="founder">
-                    <div class="founder-slot" title="Founder message — coming soon">
+                    <div class="founder-slot" title="Founder message - coming soon">
                         <div class="play">▶</div>
                         <div style="font-weight:600;">A message from the founder</div>
                         <div class="soon">FACE-CAM WALKTHROUGH · DROPPING SOON</div>
@@ -361,7 +382,7 @@
                     <div>
                         <h3 style="font-size:1.5rem; margin-bottom:12px;">Why we build it differently</h3>
                         <p style="color:var(--text-dim); margin-bottom:14px;">Most scripts are dumped online and forgotten. We treat this like real software: versioned releases, patch-day turnaround, and a profile for every gun because "close enough" loses gunfights.</p>
-                        <p style="color:var(--text-dim);">That's why players who've tried everything else stay with Sniperr — and why we can say zero bans in three-plus years and mean it.</p>
+                        <p style="color:var(--text-dim);">That's why players who've tried everything else stay with Sniperr - and why we can say zero bans in three-plus years and mean it.</p>
                     </div>
                 </div>
             </div>
@@ -390,7 +411,7 @@
             <div class="rating-row" style="margin-top:6px;"><span class="stars">★★★★★</span> 4.9 out of 5 · 1,247 reviews</div>
             <div class="reviews-grid">
                 <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"Hands down the best Apex script I've used fr. Setup was mad easy and I'm beaming everyone now. 10/10 support, they reply in seconds."</p><div class="reviewer"><img src="image reviews/Tyler_Durden.png" alt="" class="reviewer-avatar"><div><div class="reviewer-name">shad_capalot</div><div class="reviewer-rank">Diamond IV</div></div></div></div>
-                <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"Buy this rn. Wiped 3 squads in a row 30 mins after install. The tracking is the best on the market — the R-301 literally doesn't move."</p><div class="reviewer"><img src="image reviews/xo.jpg" alt="" class="reviewer-avatar"><div><div class="reviewer-name">Lxquid</div><div class="reviewer-rank">Master</div></div></div></div>
+                <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"Buy this rn. Wiped 3 squads in a row 30 mins after install. The tracking is the best on the market - the R-301 literally doesn't move."</p><div class="reviewer"><img src="image reviews/xo.jpg" alt="" class="reviewer-avatar"><div><div class="reviewer-name">Lxquid</div><div class="reviewer-rank">Master</div></div></div></div>
                 <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"Was scared to buy after getting burned before BUT got so much help and this is the best script I've EVER tried. Zero recoil on the Flatline is broken."</p><div class="reviewer"><img src="image reviews/5c97d7c3bca62c9531192603ec620d3b.png" alt="" class="reviewer-avatar"><div><div class="reviewer-name">buttersg</div><div class="reviewer-rank">Diamond II</div></div></div></div>
                 <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"The anti-recoil is genuinely strong, 100% worth the price. Went from Plat to Diamond in 2 days. Total game changer."</p><div class="reviewer"><img src="image reviews/e8513c258001f949906adfd45d00f564.png" alt="" class="reviewer-avatar"><div><div class="reviewer-name">alarm18</div><div class="reviewer-rank">Platinum I</div></div></div></div>
                 <div class="review-card"><span class="verified">VERIFIED</span><div class="stars sm">★★★★★</div><p class="review-text">"Weapon auto-detect is insane, I don't switch anything, it just works. Best script for Apex hands down. W."</p><div class="reviewer"><img src="image reviews/jamsuyy on TikTok.jpg" alt="" class="reviewer-avatar"><div><div class="reviewer-name">spexzklt</div><div class="reviewer-rank">Diamond III</div></div></div></div>
@@ -404,11 +425,11 @@
                 <div>
                     <div class="shield">🛡️</div>
                     <p class="eyebrow" style="margin-top:14px;">SECURITY &amp; DETECTION</p>
-                    <h2 class="h2" style="font-size:1.9rem;">Why it's safe — the technical truth</h2>
-                    <p style="color:var(--text-dim);">It's not a software hack. Cronus Zen sits between your controller and console as a hardware device — the game only ever sees standard controller input.</p>
+                    <h2 class="h2" style="font-size:1.9rem;">Why it's safe - the technical truth</h2>
+                    <p style="color:var(--text-dim);">It's not a software hack. Cronus Zen sits between your controller and console as a hardware device - the game only ever sees standard controller input.</p>
                 </div>
                 <ul class="sec-points">
-                    <li>▹ <span><b>Hardware-level, not software.</b> Easy Anti-Cheat scans memory and files — it can't see input shaped on external hardware.</span></li>
+                    <li>▹ <span><b>Hardware-level, not software.</b> Easy Anti-Cheat scans memory and files - it can't see input shaped on external hardware.</span></li>
                     <li>▹ <span><b>Servers see a normal controller.</b> No injection, no overlay, no memory reads on your PC or console.</span></li>
                     <li>▹ <span><b>0 bans reported</b> across thousands of installs in 3+ years.</span></li>
                     <li>▹ <span><b>Nothing touches the game.</b> You flash the script to the Zen, not to Apex.</span></li>
@@ -456,11 +477,11 @@
             <div class="whatyouget-box">
                 <p class="eyebrow">WHAT YOU'RE GETTING</p>
                 <ul class="get-list">
-                    <li><b>AI Anti-Recoil</b> — per-weapon profiles for all 28 weapons, auto-detects what you're holding</li>
-                    <li><b>Polar Aim Tracking</b> — sticky aim through slides, strafes, and jumps with auto-sensitivity</li>
-                    <li><b>Movement Macros</b> — 1-tap superglide, tap-strafe, slide-jump optimization</li>
-                    <li><b>Jitter Aim</b> — precision mode for Wingman, G7 Scout, and single-fire weapons</li>
-                    <li><b>Lifetime updates</b> — free patch-day updates, setup tutorials, and community access</li>
+                    <li><b>AI Anti-Recoil</b> - per-weapon profiles for all 28 weapons, auto-detects what you're holding</li>
+                    <li><b>Polar Aim Tracking</b> - sticky aim through slides, strafes, and jumps with auto-sensitivity</li>
+                    <li><b>Movement Macros</b> - 1-tap superglide, tap-strafe, slide-jump optimization</li>
+                    <li><b>Jitter Aim</b> - precision mode for Wingman, G7 Scout, and single-fire weapons</li>
+                    <li><b>Lifetime updates</b> - free patch-day updates, setup tutorials, and community access</li>
                 </ul>
             </div>
         </section>
@@ -470,8 +491,8 @@
             <p class="eyebrow center">ANSWERS</p>
             <h2 class="h2">Frequently asked questions</h2>
             <div class="faq-list">
-                <div class="faq-item"><button class="faq-q">Can I get banned?</button><div class="faq-a"><p>Cronus Zen is undetectable by game servers — they only see a regular controller. Easy Anti-Cheat cannot detect hardware-based input modifications. In 3+ years and thousands of uses, we've never had a single ban report.</p></div></div>
-                <div class="faq-item"><button class="faq-q">Does it actually work in Season 29?</button><div class="faq-a"><p>Yes. Re-tuned within 24 hours of Season 29 launching. All new weapon balance changes, recoil patterns, and meta shifts are reflected. The Nemesis, L-STAR, and every meta weapon have current profiles.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Can I get banned?</button><div class="faq-a"><p>Cronus Zen is undetectable by game servers - they only see a regular controller. Easy Anti-Cheat cannot detect hardware-based input modifications. In 3+ years and thousands of uses, we've never had a single ban report.</p></div></div>
+                <div class="faq-item"><button class="faq-q">Does it work after the latest patch?</button><div class="faq-a"><p>Yes. Re-tuned within 24 hours of every patch. All new weapon balance changes, recoil patterns, and meta shifts are reflected. The Nemesis, L-STAR, and every meta weapon have current profiles.</p></div></div>
                 <div class="faq-item"><button class="faq-q">Is it updated regularly?</button><div class="faq-a"><p>Every single patch. When Respawn changes weapon stats, we update recoil tables within 24 hours and post the new version in your members area. Just re-download and flash to your Zen.</p></div></div>
                 <div class="faq-item"><button class="faq-q">How hard is it to set up?</button><div class="faq-a"><p>5 minutes. Download the script, open Zen Studio, drag and drop into Slot 1, program it. We include step-by-step video tutorials for PS5, Xbox, and PC. Support replies in minutes if you get stuck.</p></div></div>
                 <div class="faq-item"><button class="faq-q">What do I need to use this?</button><div class="faq-a"><p>A Cronus Zen device (~$100 on Amazon), a USB cable, and your console/PC. That's it.</p></div></div>
@@ -510,7 +531,7 @@
             <div class="footer-col"><h4>Resources</h4><a href="#">Discord</a><a href="tutorials.html">Setup Guides</a><a href="#faq">FAQ</a></div>
             <div class="footer-col"><h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund Policy</a></div>
         </div>
-        <p class="footer-copy">© 2026 Sniperr — All rights reserved. Not affiliated with Respawn Entertainment or EA. Scripts provided for personal and entertainment use. Use at your own risk.</p>
+        <p class="footer-copy">© 2026 Sniperr - All rights reserved. Not affiliated with Respawn Entertainment or EA. Scripts provided for personal and entertainment use. Use at your own risk.</p>
     </footer>
 
     <script>
