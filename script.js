@@ -317,22 +317,42 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     })(window, document, "clarity", "script", id);
 })();
 
-// ---- Checkout upsell / order bump ----
+// ---- Checkout upsell modal (shown after they click "Get Sniperr") ----
 (function upsell() {
     const cfg = window.SNIPERR_CHECKOUT;
     if (!cfg || !cfg.base) return;
-    const hasUpsell = cfg.upsell && cfg.upsell.indexOf("REPLACE") === -1;
-    const upsellUrl = hasUpsell ? cfg.upsell : cfg.base;  // safe fallback until the bundle link is set
-    const links = Array.from(document.querySelectorAll('a[href*="whop.com/checkout"]'));
-    const checks = Array.from(document.querySelectorAll('.upsell-check'));
-    const primaries = Array.from(document.querySelectorAll('a.btn-primary'));
-    primaries.forEach(b => { if (!b.dataset.label) b.dataset.label = b.textContent.trim(); });
-    function apply(on) {
-        checks.forEach(c => { c.checked = on; const card = c.closest('.upsell'); if (card) card.classList.toggle('on', on); });
-        links.forEach(a => a.href = on ? upsellUrl : cfg.base);
-        primaries.forEach(b => b.textContent = on ? (b.dataset.label + ' + Support') : b.dataset.label);
-    }
-    links.forEach(a => a.href = cfg.base);   // normalize to base on load
-    checks.forEach(c => c.addEventListener('change', e => apply(e.target.checked)));
-    apply(false);
+    const hasBundle = cfg.upsell && cfg.upsell.indexOf("REPLACE") === -1;
+    const bundleUrl = hasBundle ? cfg.upsell : cfg.base;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'up-overlay';
+    overlay.innerHTML = `
+        <div class="up-modal">
+            <div class="up-eyebrow">BEFORE YOU CHECK OUT</div>
+            <h3>Want a <span class="grad">dedicated specialist</span>?</h3>
+            <p>Get your own 1-on-1 support agent on call 24/7 — priority setup, custom tuning for your exact build and loadout, and a direct line whenever you need help. Guaranteed response.</p>
+            <span class="up-price">+ $150 one-time</span>
+            <a id="upYes" class="btn btn-primary btn-arrow" href="${bundleUrl}" target="_self">Yes, add 1-on-1 support</a>
+            <button id="upNo" class="up-skip">No thanks, just the script</button>
+        </div>`;
+    document.body.appendChild(overlay);
+
+    function show() { overlay.classList.add('show'); }
+    function hide() { overlay.classList.remove('show'); }
+
+    document.getElementById('upNo').addEventListener('click', () => {
+        hide();
+        window.location.href = cfg.base;
+    });
+    overlay.addEventListener('click', e => { if (e.target === overlay) { hide(); } });
+
+    // Intercept every "Get Sniperr" checkout link.
+    document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(a => {
+        // Don't intercept the upsell modal's own "Yes" button.
+        if (a.id === 'upYes') return;
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            show();
+        });
+    });
 })();
