@@ -240,10 +240,7 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
 // ---- Exit-intent coupon ($10 off, SNIPERR04) ----
 (function coupon() {
     const CODE = (window.SNIPERR_COUPON || 'SNIPERR04');
-    const cfg = window.SNIPERR_CHECKOUT || {};
-    const checkout = cfg.game
-        ? ("upgrade.html?game=" + encodeURIComponent(cfg.game))
-        : ((document.querySelector('a[href*="upgrade.html"]') || {}).href || '#');
+    const checkout = (document.querySelector('a[href*="whop.com/checkout"]') || {}).href || '#';
     const KEY = 'sniperr_coupon_seen';
     let armed = false, shown = false, intent = false;
 
@@ -274,9 +271,8 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     const open = () => {
         if (shown) return;
         try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
-        // Don't show the coupon if they came back from the checkout/upgrade page
-        // (they were about to pay full price — don't undercut them).
-        try { if (document.referrer && document.referrer.includes('upgrade.html')) return; } catch (e) {}
+        // Don't show the coupon if they came back from the checkout page.
+        try { if (document.referrer && document.referrer.includes('whop.com')) return; } catch (e) {}
         try { if (document.referrer && document.referrer.includes('whop.com')) return; } catch (e) {}
         shown = true; overlay.classList.add('show');
         try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
@@ -351,18 +347,7 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     });
 })();
 
-// ---- Checkout routing (via upgrade page) ----
-(function checkoutRoute() {
-    const cfg = window.SNIPERR_CHECKOUT;
-    if (!cfg || !cfg.game) return;
-    const upgradeUrl = "upgrade.html?game=" + encodeURIComponent(cfg.game);
-    document.querySelectorAll('a[href*="whop.com/checkout"]').forEach(a => {
-        a.href = upgradeUrl;
-    });
-    // Also update the sticky-price CTA if present.
-    const spCta = document.querySelector('.sticky-price .sp-cta');
-    if (spCta) spCta.href = upgradeUrl;
-})();
+// Checkout routing removed - all buttons go directly to whop.com checkout.
 
 // ---- Sticky price reminder (shows when hero scrolls out of view) ----
 (function stickyPrice() {
@@ -370,9 +355,8 @@ document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el
     if (!hero) return;
     const bar = document.createElement('div');
     bar.className = 'sticky-price';
-    const cfg = window.SNIPERR_CHECKOUT || {};
-    const upgradeUrl = cfg.game ? ("upgrade.html?game=" + cfg.game) : "#";
-    bar.innerHTML = '<span class="sp-old">$80</span><span class="sp-new">$50</span><span class="sp-label">one-time</span><a class="sp-cta" href="' + upgradeUrl + '">Get Sniperr &rarr;</a>';
+    const checkoutUrl = (document.querySelector('a[href*="whop.com/checkout"]') || {}).href || '#';
+    bar.innerHTML = '<span class="sp-old">$80</span><span class="sp-new">$50</span><span class="sp-label">one-time</span><a class="sp-cta" href="' + checkoutUrl + '">Get Sniperr &rarr;</a>';
     document.body.appendChild(bar);
     const obs = new IntersectionObserver(entries => {
         bar.classList.toggle('show', !entries[0].isIntersecting);
